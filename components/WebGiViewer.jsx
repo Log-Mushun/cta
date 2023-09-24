@@ -7,10 +7,18 @@ import React, {
     forwardRef,
     useImperativeHandle
 } from 'react'
-import { ViewerApp, AssetManagerPlugin, GBufferPlugin, ProgressivePlugin, TonemapPlugin, SSRPlugin, SSAOPlugin, BloomPlugin, GammaCorrectionPlugin, mobileAndTabletCheck } from 'webgi'
+import { ViewerApp, 
+    AssetManagerPlugin, 
+    GBufferPlugin, 
+    ProgressivePlugin, 
+    TonemapPlugin, 
+    SSRPlugin, SSAOPlugin, 
+    BloomPlugin, 
+    GammaCorrectionPlugin, 
+    mobileAndTabletCheck } from 'webgi'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+// custom component to controll animation
 import { scrollAnimation } from '@/lib/scroll-animation';
 
 gsap.registerPlugin(ScrollTrigger);
