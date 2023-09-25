@@ -1,13 +1,14 @@
+import AirportsFooter from "./AirportsFooter";
+
 const Airports = () => {
-    return(
-        <div className="bg-gradient-radial-a h-[100vh] flex flex-row justify-center">
-            <div className="text-center">                
-                <h1 className="text-7xl pt-[4rem] w-[100%]">
-                    AEROPUERTOS
-                </h1>
+    return (
+        <div className="bg-gradient-radial-a h-[100vh] flex flex-col justify-between">
+            <div className="text-center pt-[4rem]">
+                <h1 className="text-7xl">AEROPUERTOS</h1>
             </div>
+            <AirportsFooter/>
         </div>
-    )
-}
+    );
+};
 
 export default Airports;

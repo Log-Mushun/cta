@@ -23,6 +23,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'FuturaMedium';
+  src: url('/fonts/Futura_Medium.ttf') format('truetype');
+  font-weight: normal; /* Puedes establecer font-weight según corresponda para Medium */
+  font-style: normal;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -33,6 +40,26 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-h1 {
+h1,h2,h3 {
     font-family: 'FuturaHvBTHeavy', sans-serif;
+}
+
+p {
+  font-family: 'FuturaMedium', sans-serif;
+}
+
+.row_text_small{
+  padding-right: 1rem;
+  font-size: 0.7rem;
+}
+
+.row_text_big{
+  padding-left: 1rem;
+  font-size: 0.9rem;
+  color: #7f9cb7;
+}
+
+.row_text_big:hover{
+  color: #ffffff;
+  cursor: pointer;
 }

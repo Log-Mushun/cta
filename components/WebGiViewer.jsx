@@ -26,7 +26,8 @@ gsap.registerPlugin(ScrollTrigger);
 function WebGiViewer() {
     const canvasRef = useRef(null);
 
-    const memorizedScrollAnimation = useCallback(
+    //memoized animation based on position, saves in cache the result of scroll animation
+    const memoizedScrollAnimation = useCallback(
         (position, target, onUpdate) => {
             if(position && target && onUpdate){
                 scrollAnimation(position, target, onUpdate);
@@ -34,18 +35,21 @@ function WebGiViewer() {
         }, []
     )
 
+    //Creates a viewer and stablishes the canvas where it will be rendered
     const setupViewer = useCallback(async () => {
         const viewer = new ViewerApp({
             canvas: canvasRef.current
         });
 
+        // first configure our manager before continuing with the configuration
         const manager = await viewer.addPlugin(AssetManagerPlugin);
 
         const camera = viewer.scene.activeCamera;
         const position = camera.position;
         const target = camera.target;
 
-        await viewer.addPlugin(GBufferPlugin);
+        await viewer.addPlugin(GBufferPlugin);        
+        // Tonemap allows us to remove the background of the model
         await viewer.addPlugin(new TonemapPlugin(true));
         await viewer.addPlugin(new ProgressivePlugin(32));
         await viewer.addPlugin(GammaCorrectionPlugin);
@@ -57,11 +61,11 @@ function WebGiViewer() {
 
         //import model
         await manager.addFromPath("banda.glb");
-
+        //removes background
         viewer.getPlugin(TonemapPlugin).config.clipBackground = true;
-
+        //disable controns so users can't zoom in/our or rotate our model with the mouse
         viewer.scene.activeCamera.setCameraOptions({ controlsEnabled: false });
-
+        //always start page on top
         window.scrollTo(0, 0);
 
         let needsUpdate = true;
@@ -78,7 +82,7 @@ function WebGiViewer() {
             }
         });
 
-        memorizedScrollAnimation(position, target, onUpdate);
+        memoizedScrollAnimation(position, target, onUpdate);
 
     }, []);
 
