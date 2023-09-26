@@ -1,3 +1,5 @@
+'use client'
+
 // components
 import WorkSlider from '../../components/WorkSlider';
 import Bulb from '../../components/Bulb';
