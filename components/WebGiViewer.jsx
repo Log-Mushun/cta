@@ -90,7 +90,7 @@ function WebGiViewer() {
         setupViewer();
     }, [])
     return (
-        <div className='fixed inset-0 w-full h-full'>
+        <div className='fixed inset-0 w-full h-full z-0'>
             <canvas className='w-[100%]' ref={canvasRef} />
         </div>
     )
