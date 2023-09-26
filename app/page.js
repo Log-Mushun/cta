@@ -18,6 +18,7 @@ import { fadeIn } from '../variants';
 import Header from '@/components/Header';
 
 import Transition from '@/components/Transition';
+import Plexus from '@/components/Plexus';
 
 const Home = () => {
   return (
@@ -28,7 +29,7 @@ const Home = () => {
           <Header />
           {/* text */}
           <div className='h-screen w-screen bg-gradient-radial-c'>
-            <div className='text-center flex flex-row justify-between items-end pb-10 h-full container mx-auto'>
+            <div className='text-center flex flex-row justify-around items-end pb-10 h-full w-[60%] container mx-auto'>
               {/* suitcase */}
               <motion.div
                 className='z-10 flex items-center flex-col'
@@ -72,7 +73,8 @@ const Home = () => {
           </div>
           <div className='w-full h-full absolute right-0 bottom-0'>
             {/* particles */}
-            <ParticlesContainer />
+            {/* <ParticlesContainer /> */}
+            <Plexus/>
           </div>
         </div>
       </motion.div>
