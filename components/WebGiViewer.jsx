@@ -66,7 +66,7 @@ function WebGiViewer() {
         //disable controns so users can't zoom in/our or rotate our model with the mouse
         viewer.scene.activeCamera.setCameraOptions({ controlsEnabled: false });
         //always start page on top
-        window.scrollTo(0, 0);
+        //window.scrollTo(0, 0);
 
         let needsUpdate = true;
 
