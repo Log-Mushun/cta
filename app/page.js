@@ -22,6 +22,7 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 
 import SplitType from 'split-type';
+import ParticlesContainerBackground from '@/components/ParticlesContainerBackground';
 
 
 
@@ -96,9 +97,11 @@ const chars = ourText.chars
             </div>
           </div>
           <div className='w-full h-full absolute right-0 bottom-0'>
-            {/* particles */}
             <ParticlesContainer />
           </div>
+        {/*   <div className='w-full h-full absolute right-0 bottom-0 '>
+             <ParticlesContainerBackground  />
+    </div> */}
         </div>
       </motion.div>
     </AnimatePresence>
