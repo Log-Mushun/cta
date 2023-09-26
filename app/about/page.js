@@ -1,4 +1,6 @@
 'use client'
+/* eslint react/no-unescaped-entities */
+
 import React, { useState } from 'react';
 
 // icons
