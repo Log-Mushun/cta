@@ -105,7 +105,7 @@ const About = () => {
   const [index, setIndex] = useState(0);
   console.log(index);
   return (
-    <div className='h-full bg-primary/30 py-32 text-center xl:text-left'>
+    <div className='h-full bg-gradient-radial-a py-32 text-center xl:text-left'>
       <Circles />
       {/* avatar img */}
       <motion.div
@@ -117,15 +117,15 @@ const About = () => {
       >
         <Avatar />
       </motion.div>
-      <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
+      <div className='container mx-auto h-full flex flex-col items-center lg:flex-row xl:flex-row gap-x-6'>
         {/* text */}
-        <div className='flex-1 flex flex-col justify-center'>
+        <div className='flex flex-col justify-start'>
           <motion.h2
             variants={fadeIn('right', 0.2)}
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='h2'
+            className='h2 text-3xl'
           >
             Captivating <span className='text-accent'>stories</span> birth
             magnificent designs.
@@ -147,7 +147,7 @@ const About = () => {
             initial='hidden'
             animate='show'
             exit='hidden'
-            className='hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8'
+            className='hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8 lg:flex lg:items-center'
           >
             <div className='flex flex-1 xl:gap-x-6'>
               {/* experience */}
@@ -195,7 +195,7 @@ const About = () => {
           initial='hidden'
           animate='show'
           exit='hidden'
-          className='flex flex-col w-full xl:max-w-[48%] h-[480px]'
+          className='flex flex-col w-full xl:max-w-[48%] h-[480px] items-center justify-center'
         >
           <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4'>
             {aboutData.map((item, itemIndex) => {
