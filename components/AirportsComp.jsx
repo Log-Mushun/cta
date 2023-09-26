@@ -1,6 +1,6 @@
 import AirportsFooter from "./AirportsFooter";
 
-const Airports = () => {
+const AirportsComp = () => {
     return (
         <div className="bg-gradient-radial-a h-[100vh] flex flex-col justify-between">
             <div className="text-center pt-[4rem]">
@@ -11,4 +11,4 @@ const Airports = () => {
     );
 };
 
-export default Airports;
+export default AirportsComp;
