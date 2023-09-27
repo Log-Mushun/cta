@@ -62,6 +62,12 @@ const chars = ourText.chars
           <div className='h-screen w-screen bg-gradient-radial-c'>
             <div className='text-center flex flex-row justify-around items-end pb-10 h-full w-[60%] container mx-auto'>
               {/* suitcase */}
+              <h1
+    id='titulo_selector'
+    className='text-3xl  font-bold text-[#003d71] text-center mb-6 hover:opacity-20 transition-opacity duration-300 z-10'
+  >
+    Selecciona tu experiencia
+  </h1>
               <div className='z-10 flex items-center flex-col mb-8'>
                 <Link href='/airports'>
                   <div className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-[12.5rem] w-[12rem] flex justify-end flex-col items-center'>
