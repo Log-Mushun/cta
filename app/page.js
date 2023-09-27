@@ -59,8 +59,7 @@ const chars = ourText.chars
         <div>
           <Header />
           {/* text */}
-          <div className='h-screen w-screen bg-gradient-radial-c'>
-            <div className='text-center flex flex-row justify-around items-end pb-10 h-full w-[60%] container mx-auto'>
+          <div className='h-screen w-screen bg-gradient-radial-c flex flex-col justify-center items-center'>
               {/* suitcase */}
               <h1
     id='titulo_selector'
@@ -111,7 +110,6 @@ const chars = ourText.chars
                   </div>
                 </Link>
               </motion.div>
-            </div>
           </div>
           <div className='w-full h-full absolute right-0 bottom-0'>
             {/* particles */}
