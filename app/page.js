@@ -67,6 +67,8 @@ const chars = ourText.chars
   >
     Selecciona tu experiencia
   </h1>
+  <div className='text-center flex flex-col items-center justify-center sm:gap-0 lg:gap-20 lg:pt-20  container mx-auto lg:flex-row'>
+
                <motion.div
                 className='z-10 flex items-center mb-8 flex-col'
                 variants={fadeIn('down', 0.2)}
@@ -110,6 +112,7 @@ const chars = ourText.chars
                   </div>
                 </Link>
               </motion.div>
+              </div>
           </div>
           <div className='w-full h-full absolute right-0 bottom-0'>
             {/* particles */}
