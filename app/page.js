@@ -68,32 +68,49 @@ const chars = ourText.chars
   >
     Selecciona tu experiencia
   </h1>
-              <div className='z-10 flex items-center flex-col mb-8'>
+               <motion.div
+                className='z-10 flex items-center mb-8 flex-col'
+                variants={fadeIn('down', 0.2)}
+                initial='hidden'
+                animate='show'
+                exit='hidden'
+              >
                 <Link href='/airports'>
                   <div className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-[12.5rem] w-[12rem] flex justify-end flex-col items-center'>
                     <FaSuitcaseRolling size={128} className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20  z-10' />
                     <h1 className='text-[#003d71] text-center pt-5 z-10 text-2xl'>Aeropuertos</h1>
                   </div>
                 </Link>
-              </div>
+              </motion.div>
               {/* papers */}
-              <div style={{ userDrag: 'none' }} className='z-10 flex items-center flex-col mb-8'>
-                <Link style={{ userDrag: 'none' }}  href='/airports'>
+              <motion.div
+                className='z-10 flex items-center mb-8 flex-col'
+                variants={fadeIn('down', 0.4)}
+                initial='hidden'
+                animate='show'
+                exit='hidden'
+              >                <Link   href='/airports'>
                   <div   className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-[12.5rem] w-[12rem] flex justify-end flex-col items-center'>
                     <GiCardboardBoxClosed size={128}  className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20 ' />
                     <h1 className='text-[#003d71] text-center pt-5 text-2xl'>Papel y carton</h1>
                   </div>
                 </Link>
-              </div>
+              </motion.div>
               {/* logistics */}
-              <div className='z-10 flex items-center flex-col'>
+              <motion.div
+                className='z-10 flex items-center mb-8 flex-col'
+                variants={fadeIn('down', 0.4)}
+                initial='hidden'
+                animate='show'
+                exit='hidden'
+              >         
                 <Link href='/airports'>
                   <div className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-[12.5rem] w-[12rem] flex justify-end flex-col items-center'>
                     <FaBoxesPacking size={128}  className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20 ' />
                     <h1 className='text-[#003d71] text-center pt-5 text-2xl'>Logística</h1>
                   </div>
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </div>
           <div className='w-full h-full absolute right-0 bottom-0'>
