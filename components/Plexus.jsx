@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import Image from 'next/image';
+
 const Plexus = () => {
   const [currentImage, setCurrentImage] = useState(1);
   const [increment, setIncrement] = useState(1);
@@ -25,13 +27,15 @@ const Plexus = () => {
     return () => clearInterval(interval);
   }, [totalImages, increment]);
 
-  const imageUrl = `plexus/PMATEC_${currentImage}.png`;
+  const imageUrl = `/plexus/PMATEC_${currentImage}.png`;
 
   return (
-    <img
+    <Image
       src={imageUrl}
       alt={`Image ${currentImage}`}
       className='w-full h-full z-0 mix-blend-hard-light'
+      width={1920}
+      height={1080}
     />
   );
 };
