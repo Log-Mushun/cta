@@ -1,0 +1,32 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    text-align: start;
+    a{
+        color: white;
+        text-decoration: none;
+    }
+
+    p{
+        margin: 0px;
+        display: flex;
+        overflow: hidden;
+        font-size: 32px;
+        padding-right: 30px;
+        font-weight: 300;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+   
+    .body{
+        max-width: 1200px;
+
+        p{
+            font-size: 5vw;
+            padding-right: 2vw;
+        }
+    }
+}
