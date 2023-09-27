@@ -1,39 +1,48 @@
-import { useState, useEffect } from 'react';
-
-import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
 
 const Plexus = () => {
   const [currentImage, setCurrentImage] = useState(1);
   const [increment, setIncrement] = useState(1);
   const totalImages = 148;
 
+  const canvasRef = useRef(null);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => {
         if (prevImage === totalImages) {
-          // Cambia la dirección a decrementar cuando llega a 148
           setIncrement(-1);
           return prevImage - 1;
         } else if (prevImage === 1) {
-          // Cambia la dirección a incrementar cuando llega a 1
           setIncrement(1);
           return prevImage + 1;
         } else {
-          // Incrementa o decrementa según la dirección actual
           return prevImage + increment;
         }
       });
-    }, (1000/30));  // Controla la velocidad de la animación ajustando este valor
+    }, 1000 / 30);
     return () => clearInterval(interval);
   }, [totalImages, increment]);
 
-  const imageUrl = `/plexus/PMATEC_${currentImage}.png`;
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+
+    const img = new Image();
+    img.src = `/plexus/PMATEC_${currentImage}.png`;
+
+    img.onload = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    };
+  }, [currentImage]);
 
   return (
-    <img
-      src={imageUrl}
-      alt={`Image ${currentImage}`}
+    <canvas
+      ref={canvasRef}
       className='w-full h-full z-0 mix-blend-hard-light'
+      width={1920}
+      height={1080}
     />
   );
 };
