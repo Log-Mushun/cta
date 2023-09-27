@@ -1,3 +1,5 @@
+'use client'
+
 // components
 import TestimonialSlider from '../../components/TestimonialSlider';
 

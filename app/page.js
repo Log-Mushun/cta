@@ -18,6 +18,7 @@ import { fadeIn } from '../variants';
 import Header from '@/components/Header';
 
 import Transition from '@/components/Transition';
+import Plexus from '@/components/Plexus';
 import { useEffect } from 'react';
 import gsap from 'gsap';
 
@@ -58,15 +59,8 @@ const chars = ourText.chars
         <div>
           <Header />
           {/* text */}
-          <div className='h-screen w-screen bg-gradient-radial-c flex flex-col justify-center items-center'>
-            {/* Título principal */}
-              <h1
-    id='titulo_selector'
-    className='text-3xl  font-bold text-[#003d71] text-center mb-6 hover:opacity-20 transition-opacity duration-300 z-10'
-  >
-    Selecciona tu experiencia
-  </h1>
-            <div className='text-center flex flex-col items-center justify-center sm:gap-0 lg:gap-20 lg:pt-20  container mx-auto lg:flex-row'>
+          <div className='h-screen w-screen bg-gradient-radial-c'>
+            <div className='text-center flex flex-row justify-around items-end pb-10 h-full w-[60%] container mx-auto'>
               {/* suitcase */}
               <div className='z-10 flex items-center flex-col mb-8'>
                 <Link href='/airports'>
@@ -97,7 +91,9 @@ const chars = ourText.chars
             </div>
           </div>
           <div className='w-full h-full absolute right-0 bottom-0'>
-            <ParticlesContainer />
+            {/* particles */}
+            {/* <ParticlesContainer /> */}
+            <Plexus/>
           </div>
         {/*   <div className='w-full h-full absolute right-0 bottom-0 '>
              <ParticlesContainerBackground  />
