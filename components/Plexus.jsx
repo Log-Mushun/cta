@@ -30,12 +30,10 @@ const Plexus = () => {
   const imageUrl = `/plexus/PMATEC_${currentImage}.png`;
 
   return (
-    <Image
+    <img
       src={imageUrl}
       alt={`Image ${currentImage}`}
       className='w-full h-full z-0 mix-blend-hard-light'
-      width={1920}
-      height={1080}
     />
   );
 };
