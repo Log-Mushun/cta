@@ -15,7 +15,7 @@ import { AnimatePresence,motion } from 'framer-motion';
 // variants
 import { fadeIn } from '../variants';
 
-import Header from '@/components/Header';
+import HeaderSelector from '@/components/Headers/HeaderSelector';
 
 import Transition from '@/components/Transition';
 import Plexus from '@/components/Plexus';
@@ -57,7 +57,7 @@ const chars = ourText.chars
       <motion.div className='h-full'>
         <Transition/>
         <div>
-          <Header />
+          <HeaderSelector />
           {/* text */}
           <div className='h-screen w-screen bg-gradient-radial-c flex flex-col justify-center items-center'>
               {/* suitcase */}

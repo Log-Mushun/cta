@@ -1,6 +1,6 @@
 // components
 import Nav from '../components/Nav';
-import Header from '../components/Header';
+import Header from './Headers/HeaderSelector';
 
 const Layout = ({ children }) => {
   return (
