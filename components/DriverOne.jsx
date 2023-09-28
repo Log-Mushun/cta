@@ -11,7 +11,7 @@ const DriverOne = () => {
             width={60}
             height={60}
             alt='a blue interactive button'
-            className='w-48 h-48 relative top-[-5%] right-[-5%]'
+            className='w-48 h-48 relative top-[-5%] left-[25%]'
             />
         </div>
     )
