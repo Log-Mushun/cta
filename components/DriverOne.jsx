@@ -3,7 +3,7 @@ import Image from "next/image";
 const DriverOne = () => {
     return(
         <div className="bg-gradient-radial-b h-[100vh] text-right pr-40 pb-30" id="driver-one">
-            <h1 className="text-6xl relative right-[25%] top-[10%]">
+            <h1 className="text-6xl relative right-[25%] top-[10%] z-0">
                 Driver #1
             </h1>
             <Image
