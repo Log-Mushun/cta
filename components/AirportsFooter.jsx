@@ -1,6 +1,6 @@
 const AirportsFooter = () => {
     return (
-        <div className="bg-transparent flex flex-col z-20">
+        <div className="bg-transparent flex flex-col z-20 experience_footer">
             <div className="flex flex-row justify-between pl-14 pb-5">
                 <div className="flex flex-row">
                     <h3 className="row_text_small">Credits</h3>
