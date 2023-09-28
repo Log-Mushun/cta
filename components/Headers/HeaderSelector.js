@@ -4,12 +4,22 @@ import Image from 'next/image';
 // next link
 import Link from 'next/link';
 
+import {motion} from 'framer-motion'
+import { fadeIn } from '@/variants';
+
 // components
 import Socials from '../Socials';
 
 const HeaderSelector = () => {
   return (
-    <header className='absolute z-10 w-full flex items-center px-16 xl:px-0 xl:h-[90px]'>
+    <motion.header className='absolute z-10 w-full flex items-center px-16 xl:px-0 xl:h-[90px]'
+    animate={{
+      opacity: [0, 1],
+  }}
+  transition={{
+    delay: 1, 
+    duration: 1 }}
+    >
       <div className='container mx-auto flex justify-center'>
         {/* logo */}
         <Link href={'/'}>
@@ -23,7 +33,7 @@ const HeaderSelector = () => {
           />
         </Link>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

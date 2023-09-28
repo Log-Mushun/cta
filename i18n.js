@@ -5,13 +5,13 @@ const resources = {
   en: {
     translation: {
       "header-home": "Home",
-      "header-airport": "Airport",
+      "header-airport": "Airports",
     }
   },
   sp: {
     translation: {
       "header-home": "Inicio",
-      "header-airport": "Aeropuerto",
+      "header-airport": "Aeropuertos",
     }
   } 
 };

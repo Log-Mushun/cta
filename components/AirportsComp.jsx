@@ -20,9 +20,26 @@ const AirportsComp = () => {
     return (
         <I18nextProvider i18n={i18nfile}>
         <div className="bg-gradient-radial-a h-[100vh] flex flex-col justify-between">
+        <div className="flex flex-col justify-between items-center h-screen">
             <div className="text-center pt-[4rem]">
                 <h1 className="text-7xl">{t('header-airport')}</h1>
             </div>
+            <div className="flex flex-row self-center ">
+                    <motion.div
+                        animate={{
+                            opacity: [0, 1, 0],
+                            y: [-40, 0, 0]
+                        }}
+                        transition={{
+                            repeat: Infinity,
+                            repeatDelay: 1
+                        }}
+                    >
+                        <BsDot className="h-8 w-8" />
+                    </motion.div>
+                    <h2 className="text-xl">Scroll down</h2>
+                </div>
+        </div>
             <AirportsFooter/>
         </div>
         </I18nextProvider>

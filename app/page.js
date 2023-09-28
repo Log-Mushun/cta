@@ -10,7 +10,7 @@ import { FaBoxesPacking } from 'react-icons/fa6'
 import ParticlesContainer from '../components/ParticlesContainer';
 
 // framer motion
-import { AnimatePresence,motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 // variants
 import { fadeIn } from '../variants';
@@ -33,11 +33,11 @@ const Home = () => {
 
   useEffect(() => {
     const ourText = new SplitType('#titulo_selector', { types: 'chars' })
-const chars = ourText.chars
+    const chars = ourText.chars
     // Animación de aparición para titulo_selector
     gsap.fromTo(
       chars,
-      { 
+      {
         y: 100,
         opacity: 0
       },
@@ -48,28 +48,42 @@ const chars = ourText.chars
         duration: 1,
         ease: 'power4.out',
       }
-    )
+    );
+      // Animación de aparición para la línea
+  gsap.fromTo(
+    '#titulo_selector_span',
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 0.5,
+      duration: 10,
+      ease: 'power4.out',
+    }
+  );
   }, []);
 
-  
+
   return (
     <AnimatePresence>
       <motion.div className='h-full'>
-        <Transition/>
+        <Transition />
         <div>
           <HeaderSelector />
           {/* text */}
           <div className='h-screen w-screen bg-gradient-radial-c flex flex-col justify-center items-center'>
-              {/* suitcase */}
-              <h1
-    id='titulo_selector'
-    className='text-3xl  font-bold text-[#003d71] text-center mb-6 hover:opacity-20 transition-opacity duration-300 z-10'
-  >
-    Selecciona tu experiencia
-  </h1>
-  <div className='text-center flex flex-col items-center justify-center sm:gap-0 lg:gap-20 lg:pt-20  container mx-auto lg:flex-row'>
+            <div className='relative top-[15%]'>
+              <h4
+                id='titulo_selector'
+                className='text-2xl text-[#8d9092] text-center hover:opacity-20 transition-opacity duration-300 z-10 '
+              >
+                Selecciona tu experiencia
+              </h4>
+              <p id='titulo_selector_span' className='block w-[100%] h-[0.2rem] bg-[#003d71] mt-0'></p>
+            </div>
+            <div className='text-center flex flex-col items-center justify-center sm:gap-0 lg:gap-20 lg:pt-20  container mx-auto lg:flex-row relative top-[15%]'>
 
-               <motion.div
+              <motion.div
                 className='z-10 flex items-center mb-8 flex-col'
                 variants={fadeIn('down', 0.2)}
                 initial='hidden'
@@ -90,9 +104,9 @@ const chars = ourText.chars
                 initial='hidden'
                 animate='show'
                 exit='hidden'
-              >                <Link   href='/airports'>
-                  <div   className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-[12.5rem] w-[12rem] flex justify-end flex-col items-center'>
-                    <GiCardboardBoxClosed size={128}  className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20 ' />
+              >                <Link href='/airports'>
+                  <div className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-[12.5rem] w-[12rem] flex justify-end flex-col items-center'>
+                    <GiCardboardBoxClosed size={128} className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20 ' />
                     <h1 className='text-[#003d71] text-center pt-5 text-2xl'>Papel y carton</h1>
                   </div>
                 </Link>
@@ -104,22 +118,22 @@ const chars = ourText.chars
                 initial='hidden'
                 animate='show'
                 exit='hidden'
-              >         
+              >
                 <Link href='/airports'>
                   <div className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-[12.5rem] w-[12rem] flex justify-end flex-col items-center'>
-                    <FaBoxesPacking size={128}  className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20 ' />
+                    <FaBoxesPacking size={128} className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20 ' />
                     <h1 className='text-[#003d71] text-center pt-5 text-2xl'>Logística</h1>
                   </div>
                 </Link>
               </motion.div>
-              </div>
+            </div>
           </div>
           <div className='w-full h-full absolute right-0 bottom-0'>
             {/* particles */}
             {/* <ParticlesContainer /> */}
-            <Plexus/>
+            <Plexus />
           </div>
-        {/*   <div className='w-full h-full absolute right-0 bottom-0 '>
+          {/*   <div className='w-full h-full absolute right-0 bottom-0 '>
              <ParticlesContainerBackground  />
     </div> */}
         </div>
