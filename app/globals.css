@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  margin: 0;
+  padding: 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +15,8 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -49,6 +53,8 @@ body {
   scrollbar-width: thin; 
   scrollbar-color: transparent transparent; 
   overflow: auto;
+  margin: 0;
+  padding: 0;
 }
 
 body::-webkit-scrollbar {
