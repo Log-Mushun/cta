@@ -31,17 +31,21 @@ export default function Airports() {
       };
     }, []);
   return (
-    <> 
-    <WebGiViewer/>
-     <HeaderGeneral/>
-     <HeaderExperience/>
-      <PlusButton showPlusButton={showPlusButton}/>
-      <AirportsComp/>
+    <>
+      <WebGiViewer />
+      <HeaderGeneral />
+      <HeaderExperience />
+      <AirportsComp />
       <div className="relative w-screen mr-0 ml-0">
-        <DriverOne/>
+        <DriverOne />
+        <PlusButton showPlusButton={showPlusButton}/>
+        <SlidableDriverInfo />
+      </div>
+      <div className="relative w-screen mr-0 ml-0">
+        <DriverInsights />
+        <PlusButton showPlusButton={showPlusButton}/>
         <SlidableDriverInfo/>
-      </div>      
-      <DriverInsights/>
+      </div>
     </>
   )
 }

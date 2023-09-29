@@ -71,7 +71,7 @@ const PlusButton = (props) => {
   return (
     <div>
       <motion.div
-        className="flex items-center justify-center w-16 h-16 fixed right-12 top-36 cursor-pointer z-30 opacity-0"
+        className="flex items-center justify-center w-16 h-16 absolute right-12 top-36 cursor-pointer z-30 opacity-0"
         id="plus-button"
         variants={fadeIn("down", 0.2)}
         initial="hidden"
@@ -95,7 +95,7 @@ const PlusButton = (props) => {
         />
       </motion.div>
         <div>
-          <ImCross className="fixed top-10 right-10 z-[32] opacity-0"
+          <ImCross className="fixed top-10 right-10 z-[100] opacity-0 cursor-pointer"
           id="cross-close"
           onClick={closeFunction}/>
         </div>
