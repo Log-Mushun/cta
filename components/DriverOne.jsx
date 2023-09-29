@@ -1,4 +1,5 @@
 import Image from "next/image";
+import PlusButton from "./PlusButton";
 
 const DriverOne = () => {
     return(
@@ -13,6 +14,7 @@ const DriverOne = () => {
             alt='a blue interactive button'
             className='w-48 h-48 relative top-[-5%] left-[25%]'
             />
+            <PlusButton/>
         </div>
     )
 }
