@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 const Section = styled.section`
 width: 100vw;
-min-height: 100vh;
+height: 100vh;
 position: relative;
   z-index: 1;
   background-color: grey;

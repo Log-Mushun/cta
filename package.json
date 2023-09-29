@@ -25,6 +25,7 @@
     "react-dom": "18.2.0",
     "react-i18next": "^13.2.2",
     "react-icons": "^4.11.0",
+    "react-spring": "^9.7.3",
     "react-tsparticles": "^2.12.2",
     "sass": "^1.68.0",
     "split-type": "^0.3.3",
