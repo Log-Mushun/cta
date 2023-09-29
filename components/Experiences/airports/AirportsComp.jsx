@@ -1,8 +1,8 @@
 "use client";
 import { I18nextProvider, useTranslation } from "react-i18next";
-import {i18n as i18nfile} from "../i18n";
+import {i18n as i18nfile} from "../../../i18n";
 
-import AirportsFooter from "./AirportsFooter";
+import AirportsFooter from "../../AirportsFooter";
 import { BsDot } from "react-icons/bs";
 // framer motion
 import { motion } from 'framer-motion';

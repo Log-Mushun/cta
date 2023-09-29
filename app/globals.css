@@ -29,7 +29,7 @@
 
 @font-face {
   font-family: 'FuturaMedium';
-  src: url('/fonts/Futura_Medium.ttf') format('truetype');
+  src: url('/fonts/Futura_MediumBT.ttf') format('truetype');
   font-weight: normal; /* Puedes establecer font-weight según corresponda para Medium */
   font-style: normal;
 }
@@ -52,7 +52,8 @@ body {
   background: '#003b71';
   scrollbar-width: thin; 
   scrollbar-color: transparent transparent; 
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x:hidden;
   margin: 0;
   padding: 0;
 }

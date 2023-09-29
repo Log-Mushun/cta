@@ -1,10 +1,10 @@
-import AirportsComp from "@/components/AirportsComp";
+import AirportsComp from "@/components/Experiences/airports/AirportsComp";
 import BurgerMenu from "@/components/BurgerMenu";
-import DriverInsights from "@/components/DriverInsights";
-import DriverOne from "@/components/DriverOne";
+import DriverInsights from "@/components/Experiences/airports/DriverInsights";
+import DriverOne from "@/components/Experiences/airports/DriverOne";
 import HeaderExperience from "@/components/Headers/HeaderExperience";
 import HeaderGeneral from "@/components/Headers/HeaderGeneral/HeaderGeneral";
-import WebGiViewer from "@/components/WebGiViewer";
+import WebGiViewer from "@/components/Experiences/airports/WebGiViewer";
 import GalleryAirports from "@/components/Galleries/GalleryAirports";
 import { GlobalStyle } from "../styles/GlobalStyle";
 import { MyContextProvider } from "@/MyContextProvider";

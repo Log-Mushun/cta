@@ -1,19 +1,46 @@
-import AirportsComp from "@/components/AirportsComp";
-import BurgerMenu from "@/components/BurgerMenu";
-import DriverInsights from "@/components/DriverInsights";
-import DriverOne from "@/components/DriverOne";
+'use client'
+
+import AirportsComp from "@/components/Experiences/airports/AirportsComp";
+import DriverInsights from "@/components/Experiences/airports/DriverInsights";
+import DriverOne from "@/components/Experiences/airports/DriverOne";
 import HeaderExperience from "@/components/Headers/HeaderExperience";
 import HeaderGeneral from "@/components/Headers/HeaderGeneral/HeaderGeneral";
-import WebGiViewer from "@/components/WebGiViewer";
+import PlusButton from "@/components/PlusButton";
+import WebGiViewer from "@/components/Experiences/airports/WebGiViewer";
+
+import React, {useState, useEffect } from "react";
+import SlidableDriverInfo from "@/components/Experiences/airports/SlidableDriverInfo";
+
 
 export default function Airports() {
+  const [showPlusButton, setShowPlusButton] = useState(false);
+  useEffect(() => {
+      const handleScroll = () => {
+      const driverOneElement = document.getElementById('driver-one');
+  
+        if (driverOneElement) {
+          const { top } = driverOneElement.getBoundingClientRect();
+          setShowPlusButton(top <= 300);
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
   return (
     <> 
     <WebGiViewer/>
      <HeaderGeneral/>
      <HeaderExperience/>
+      <PlusButton showPlusButton={showPlusButton}/>
       <AirportsComp/>
-      <DriverOne/>
+      <div className="relative w-screen mr-0 ml-0">
+        <DriverOne/>
+        <SlidableDriverInfo/>
+      </div>      
       <DriverInsights/>
     </>
   )
