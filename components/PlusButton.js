@@ -66,19 +66,11 @@ const PlusButton = (props) => {
     };
   }, [clicked]);
 
-  if (!props.showPlusButton) {
-    return null;
-  }
-
   return (
     <div key={props.number}>
-      <motion.div
-        className="flex items-center justify-center w-16 h-16 absolute right-[60%] top-[15%] cursor-pointer z-30 opacity-0"
+      <div
+        className={`flex items-center justify-center w-24 h-24 absolute right-[60%] top-[8%] cursor-pointer z-1 opacity-0 plus-button${props.number}`}
         id={`plus-button${props.number}`}
-        variants={fadeIn("down", 0.2)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
         onClick={handleClick}
         key={props.number}
       >
@@ -90,13 +82,13 @@ const PlusButton = (props) => {
           className="relative animate-spin"
         />
         <Image
-          src={"/plus.svg"}
-          width={20}
-          height={20}
+          src={"/icon_button_driverv2.svg"}
+          width={50}
+          height={50}
           alt="a plus sign, it looks like a vertical cross"
           className="absolute"
         />
-      </motion.div>
+      </div>
     </div>
   );
 };

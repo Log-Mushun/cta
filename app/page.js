@@ -49,18 +49,18 @@ const Home = () => {
         ease: 'power4.out',
       }
     );
-      // Animación de aparición para la línea
-  gsap.fromTo(
-    '#titulo_selector_span',
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 0.5,
-      duration: 10,
-      ease: 'power4.out',
-    }
-  );
+    // Animación de aparición para la línea
+    gsap.fromTo(
+      '#titulo_selector_span',
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 0.5,
+        duration: 10,
+        ease: 'power4.out',
+      }
+    );
   }, []);
 
 
@@ -70,18 +70,8 @@ const Home = () => {
         <Transition />
         <div className='container'>
           <HeaderSelector />
-          {/* text */}
           <div className='h-screen w-screen bg-gradient-radial-c flex flex-col justify-center items-center'>
-            <div className='relative top-[15%] pb-5 md:pb-10 lg:pb-0'>
-              <h4
-                id='titulo_selector'
-                className='text-l md:text-2xl lg:text-4xl text-[#8d9092] text-center hover:opacity-20 transition-opacity duration-300 z-10 '
-              >
-                Selecciona tu experiencia
-              </h4>
-              <p id='titulo_selector_span' className='block w-[100%] h-[0.2rem] bg-[#003d71] mt-0'></p>
-            </div>
-            <div className='text-center md:flex-row lg:flex-row flex items-center justify-center sm:gap-0 lg:gap-20 lg:pt-20  container mx-auto flex-col relative top-[15%]'>
+            <div className='text-center md:flex-row lg:flex-row flex items-center justify-center sm:gap-0 lg:gap-20 lg:pt-20  container mx-auto flex-col relative top-[10%]'>
               {/*suitcase*/}
               <motion.div
                 className='z-10 flex items-center mb-8'
@@ -127,11 +117,21 @@ const Home = () => {
                 </Link>
               </motion.div>
             </div>
+            {/* text */}
+            <div className='relative top-[15%] pb-5 md:pb-10 lg:pb-0 z-10'>
+              <h4
+                id='titulo_selector'
+                className='text-l md:text-2xl lg:text-2xl text-[#003b71] opacity-80 text-center hover:opacity-20 transition-opacity duration-300 z-10'
+              >
+                Selecciona tu experiencia
+              </h4>
+              <p id='titulo_selector_span' className='block w-[100%] h-[0.2rem] bg-[#ffffff] mt-0'></p>
+            </div>
           </div>
-          <div className='w-full h-full absolute right-0 bottom-0'>
+          <div className='w-full h-full absolute right-0 bottom-0 z-0'>
+            <Plexus />
             {/* particles */}
             {/* <ParticlesContainer /> */}
-            <Plexus />
           </div>
           {/*   <div className='w-full h-full absolute right-0 bottom-0 '>
              <ParticlesContainerBackground  />

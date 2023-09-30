@@ -40,14 +40,14 @@ const DriverInsights = () => {
 
     return (
         <div className="bg-gradient-radial-a h-[100vh] text-right pr-40 relative" id="driver-insights">
-            <div className='pt-40 pl-10'>
+            <div className='pt-40 pl-10 driver-insightsclass opacity-0'>
                 <div className='flex h-[1vh] mb-4'>
                     {driverData.map((item, itemIndex) => {
                         return (
                             <div key={itemIndex} className='relative w-[20vh]'>
                                 <div
                                     key={itemIndex}
-                                    className={`cursor-pointer absolute top-0 left-0 w-[15vh] h-[1vh] z-[100] ${itemIndex === index ? 'bg-white' : 'bg-[#b2cde0]'}`}
+                                    className={`cursor-pointer absolute top-0 left-0 w-[15vh] h-[1vh] ${itemIndex === index ? 'bg-white' : 'bg-[#b2cde0]'} z-[30]`}
                                     onClick={() => setIndex(itemIndex)}
                                 ></div>
                             </div>
