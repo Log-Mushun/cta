@@ -13,15 +13,24 @@ import SlidableDriverInfo from "@/components/Experiences/airports/SlidableDriver
 
 
 export default function Airports() {
-  const [showPlusButton, setShowPlusButton] = useState(false);
+  const [showPlusButtonOne, setShowPlusButtonOne] = useState(false);
+  const [showPlusButtonTwo, setShowPlusButtonTwo] = useState(false);
+  const [showPlusButtonThree, setShowPlusButtonThree] = useState(false);
+
   useEffect(() => {
       const handleScroll = () => {
       const driverOneElement = document.getElementById('driver-one');
+      const driverInsightsElement = document.getElementById('driver-insights');
   
         if (driverOneElement) {
           const { top } = driverOneElement.getBoundingClientRect();
-          setShowPlusButton(top <= 300);
+          setShowPlusButtonOne(top <= 300);
         }
+        if (driverInsightsElement) {
+          const { top } = driverInsightsElement.getBoundingClientRect();
+          setShowPlusButtonTwo(top <= 300);
+        }
+
       };
   
       window.addEventListener('scroll', handleScroll);
@@ -38,12 +47,12 @@ export default function Airports() {
       <AirportsComp />
       <div className="relative w-screen mr-0 ml-0">
         <DriverOne />
-        <PlusButton showPlusButton={showPlusButton} number={1}/>
+        <PlusButton showPlusButton={showPlusButtonOne} number={1}/>
         <SlidableDriverInfo number={1}/>
       </div>
       <div className="relative w-screen mr-0 ml-0">
         <DriverInsights />
-        <PlusButton showPlusButton={true} number={2}/>
+        <PlusButton showPlusButton={showPlusButtonTwo} number={2}/>
         <SlidableDriverInfo number={2}/>
       </div>
     </>

@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react-hooks/exhadriverOneElementvustive-deps */
 'use client'
 import gsap from "gsap";
 import React from "react";

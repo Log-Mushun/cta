@@ -47,7 +47,7 @@ const DriverInsights = () => {
                             <div key={itemIndex} className='relative w-[20vh]'>
                                 <div
                                     key={itemIndex}
-                                    className={`cursor-pointer absolute top-0 left-0 w-[15vh] h-[1vh] z-30 ${itemIndex === index ? 'bg-white' : 'bg-[#b2cde0]'}`}
+                                    className={`cursor-pointer absolute top-0 left-0 w-[15vh] h-[1vh] z-[100] ${itemIndex === index ? 'bg-white' : 'bg-[#b2cde0]'}`}
                                     onClick={() => setIndex(itemIndex)}
                                 ></div>
                             </div>
