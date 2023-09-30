@@ -38,13 +38,13 @@ export default function Airports() {
       <AirportsComp />
       <div className="relative w-screen mr-0 ml-0">
         <DriverOne />
-        <PlusButton showPlusButton={showPlusButton} number={1} key={1}/>
-        <SlidableDriverInfo number={1} key={1}/>
+        <PlusButton showPlusButton={showPlusButton} number={1}/>
+        <SlidableDriverInfo number={1}/>
       </div>
       <div className="relative w-screen mr-0 ml-0">
         <DriverInsights />
-        <PlusButton showPlusButton={true} number={2} key={2}/>
-        <SlidableDriverInfo number={2} key={2}/>
+        <PlusButton showPlusButton={true} number={2}/>
+        <SlidableDriverInfo number={2}/>
       </div>
     </>
   )

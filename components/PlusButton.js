@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { fadeIn } from "@/variants";
 import gsap from "gsap";
 import React, { useEffect, useState } from "react";
-import {ImCross} from 'react-icons/im'
+import { ImCross } from 'react-icons/im'
 
 const PlusButton = (props) => {
   const [clicked, setClicked] = new useState(false);
-  
+
   var driverOneElement;
   var webGiViewer;
   var plusButton;
@@ -18,14 +18,14 @@ const PlusButton = (props) => {
 
 
   const handleClick = () => {
-    
+
     getTheElements();
 
     if (driverOneElement) {
       gsap.to(webGiViewer, { x: -300, duration: 0.5 });
       gsap.to(driverOneElement, { x: -300, duration: 0.5 });
       gsap.to(driverInsights, { x: -300, duration: 0.5 });
-      gsap.to(plusButton, { opacity: 0, cursor: "auto"});
+      gsap.to(plusButton, { opacity: 0, cursor: "auto" });
       gsap.to(slidableDriverInfo, { width: 300, duration: 0.5 });
       gsap.to(crossClose, { opacity: 1, cursor: "pointer", duration: 0.3 });
     }
@@ -97,12 +97,6 @@ const PlusButton = (props) => {
           className="absolute"
         />
       </motion.div>
-        <div>
-          <ImCross className="fixed top-10 right-10 z-[100] opacity-0 cursor-pointer"
-          id={`cross-close${props.number}`}
-          key={props.number}
-          onClick={closeFunction}/>
-        </div>
     </div>
   );
 };
