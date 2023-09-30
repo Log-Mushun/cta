@@ -35,10 +35,11 @@ export default function Airports() {
         <PlusButton number={1}/>
         <SlidableDriverInfo number={1}/>
       </div>
+      {/*SlidableDriverInfo affects the layout of the next element, so we have to let an empty div here in order to avoid the bug */}
+      <div>
+      </div>
       <div className="relative w-screen mr-0 ml-0">
         <DriverInsights />
-        <PlusButton number={2}/>
-        <SlidableDriverInfo number={2}/>
       </div>
     </>
   )
