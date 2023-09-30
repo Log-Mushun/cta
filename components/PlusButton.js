@@ -73,7 +73,7 @@ const PlusButton = (props) => {
   return (
     <div key={props.number}>
       <motion.div
-        className="flex items-center justify-center w-16 h-16 absolute right-12 top-36 cursor-pointer z-30 opacity-0"
+        className="flex items-center justify-center w-16 h-16 absolute right-[60%] top-[15%] cursor-pointer z-30 opacity-0"
         id={`plus-button${props.number}`}
         variants={fadeIn("down", 0.2)}
         initial="hidden"

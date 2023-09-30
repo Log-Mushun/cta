@@ -2,9 +2,9 @@
 
 const Plexus = () => {
   return (
-    <div className="w-screen h-screen">
-      <video autoPlay={true} loop muted>
-        <source src="videos/plexus.webm" type="video/webm" />
+    <div className="hidden lg:block">
+      <video autoPlay={true} loop muted className="mix-blend-hard-light opacity-70">
+        <source src="videos/plexusv3.webm" type="video/webm" />
       </video>
     </div>
   );

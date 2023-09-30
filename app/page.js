@@ -68,60 +68,60 @@ const Home = () => {
     <AnimatePresence>
       <motion.div className='h-full'>
         <Transition />
-        <div>
+        <div className='container'>
           <HeaderSelector />
           {/* text */}
           <div className='h-screen w-screen bg-gradient-radial-c flex flex-col justify-center items-center'>
-            <div className='relative top-[15%]'>
+            <div className='relative top-[15%] pb-5 md:pb-10 lg:pb-0'>
               <h4
                 id='titulo_selector'
-                className='text-2xl text-[#8d9092] text-center hover:opacity-20 transition-opacity duration-300 z-10 '
+                className='text-l md:text-2xl lg:text-4xl text-[#8d9092] text-center hover:opacity-20 transition-opacity duration-300 z-10 '
               >
                 Selecciona tu experiencia
               </h4>
               <p id='titulo_selector_span' className='block w-[100%] h-[0.2rem] bg-[#003d71] mt-0'></p>
             </div>
-            <div className='text-center flex flex-col items-center justify-center sm:gap-0 lg:gap-20 lg:pt-20  container mx-auto lg:flex-row relative top-[15%]'>
-
+            <div className='text-center md:flex-row lg:flex-row flex items-center justify-center sm:gap-0 lg:gap-20 lg:pt-20  container mx-auto flex-col relative top-[15%]'>
+              {/*suitcase*/}
               <motion.div
-                className='z-10 flex items-center mb-8 flex-col'
+                className='z-10 flex items-center mb-8'
                 variants={fadeIn('down', 0.2)}
                 initial='hidden'
                 animate='show'
                 exit='hidden'
               >
                 <Link href='/experience'>
-                  <div className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-[12.5rem] w-[12rem] flex justify-end flex-col items-center'>
-                    <FaSuitcaseRolling size={128} className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20  z-10' />
+                  <div className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-full w-[12rem] flex justify-end flex-col items-center'>
+                    <FaSuitcaseRolling size={128} className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20 w-14 z-10 hidden md:inline' />
                     <h1 className='text-[#003d71] text-center pt-5 z-10 text-2xl'>Aeropuertos</h1>
                   </div>
                 </Link>
               </motion.div>
               {/* papers */}
               <motion.div
-                className='z-10 flex items-center mb-8 flex-col'
+                className='z-10 flex items-center mb-8'
                 variants={fadeIn('down', 0.4)}
                 initial='hidden'
                 animate='show'
                 exit='hidden'
               >                <Link href='/airports'>
-                  <div className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-[12.5rem] w-[12rem] flex justify-end flex-col items-center'>
-                    <GiCardboardBoxClosed size={128} className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20 ' />
+                  <div className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-full w-[12rem] flex justify-end flex-col items-center'>
+                    <GiCardboardBoxClosed size={128} className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20 hidden lg:block md:inline' />
                     <h1 className='text-[#003d71] text-center pt-5 text-2xl'>Papel y carton</h1>
                   </div>
                 </Link>
               </motion.div>
               {/* logistics */}
               <motion.div
-                className='z-10 flex items-center mb-8 flex-col'
+                className='z-10 flex items-center mb-8'
                 variants={fadeIn('down', 0.4)}
                 initial='hidden'
                 animate='show'
                 exit='hidden'
               >
                 <Link href='/airports'>
-                  <div className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-[12.5rem] w-[12rem] flex justify-end flex-col items-center'>
-                    <FaBoxesPacking size={128} className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20 ' />
+                  <div className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-full w-[12rem] flex justify-end flex-col items-center'>
+                    <FaBoxesPacking size={128} className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20 hidden lg:block md:inline' />
                     <h1 className='text-[#003d71] text-center pt-5 text-2xl'>Logística</h1>
                   </div>
                 </Link>
