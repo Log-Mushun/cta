@@ -7,7 +7,8 @@ import React, { useEffect, useState } from "react";
 import {ImCross} from 'react-icons/im'
 
 const PlusButton = (props) => {
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = new useState(false);
+  
   var driverOneElement;
   var webGiViewer;
   var plusButton;
@@ -17,6 +18,7 @@ const PlusButton = (props) => {
 
 
   const handleClick = () => {
+    
     getTheElements();
 
     if (driverOneElement) {
@@ -28,7 +30,7 @@ const PlusButton = (props) => {
       gsap.to(crossClose, { opacity: 1, cursor: "pointer", duration: 0.3 });
     }
 
-    setClicked(true);
+    setClicked(!clicked);
   };
 
   const closeFunction = () => {
@@ -43,16 +45,16 @@ const PlusButton = (props) => {
       gsap.to(slidableDriverInfo, { width: 0, duration: 0.5 });
       gsap.to(crossClose, { opacity: 0, cursor: "auto", duration: 0.1 });
 
-      console.log("Scrolling");
+      setClicked(false);
     }
   };
 
   const getTheElements = () => {
     webGiViewer = document.getElementById("webgi-viewer");
     driverOneElement = document.getElementById("driver-one");
-    plusButton = document.getElementById("plus-button");
-    slidableDriverInfo = document.getElementById("slidable-driver-info");
-    crossClose = document.getElementById("cross-close");
+    plusButton = document.getElementById(`plus-button${props.number}`);
+    slidableDriverInfo = document.getElementById(`slidable-driver-info${props.number}`);
+    crossClose = document.getElementById(`cross-close${props.number}`);
     driverInsights = document.getElementById("driver-insights");
   }
 
@@ -69,15 +71,16 @@ const PlusButton = (props) => {
   }
 
   return (
-    <div>
+    <div key={props.number}>
       <motion.div
         className="flex items-center justify-center w-16 h-16 absolute right-12 top-36 cursor-pointer z-30 opacity-0"
-        id="plus-button"
+        id={`plus-button${props.number}`}
         variants={fadeIn("down", 0.2)}
         initial="hidden"
         animate="show"
         exit="hidden"
         onClick={handleClick}
+        key={props.number}
       >
         <Image
           src={"/circle_outside_plus.svg"}
@@ -96,7 +99,8 @@ const PlusButton = (props) => {
       </motion.div>
         <div>
           <ImCross className="fixed top-10 right-10 z-[100] opacity-0 cursor-pointer"
-          id="cross-close"
+          id={`cross-close${props.number}`}
+          key={props.number}
           onClick={closeFunction}/>
         </div>
     </div>
