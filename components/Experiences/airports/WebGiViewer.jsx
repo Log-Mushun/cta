@@ -26,6 +26,8 @@ gsap.registerPlugin(ScrollTrigger);
 function WebGiViewer() {
     const canvasRef = useRef(null);
     if (typeof window !== 'undefined') {
+        const event = new Event("webGiViewerLoaded");
+        document.dispatchEvent(event);
     
         //memoized animation based on position, saves in cache the result of scroll animation
         const memoizedScrollAnimation = useCallback(
@@ -84,7 +86,6 @@ function WebGiViewer() {
             });
     
             memoizedScrollAnimation(position, target, onUpdate);
-    
         }, []);
     
         useEffect(() => {

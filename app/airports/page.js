@@ -10,6 +10,7 @@ import WebGiViewer from "@/components/Experiences/airports/WebGiViewer";
 
 import React, {useState, useEffect } from "react";
 import SlidableDriverInfo from "@/components/Experiences/airports/SlidableDriverInfo";
+import DriverOneFunctions from "@/components/Experiences/airports/DriverOneFunctions";
 
 
 export default function Airports() {
@@ -41,6 +42,7 @@ export default function Airports() {
       <div className="relative w-screen mr-0 ml-0">
         <DriverInsights />
       </div>
+      <DriverOneFunctions/>
     </>
   )
 }

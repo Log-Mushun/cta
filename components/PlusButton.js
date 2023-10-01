@@ -22,10 +22,10 @@ const PlusButton = (props) => {
     getTheElements();
 
     if (driverOneElement) {
-      gsap.to(webGiViewer, { x: -300, duration: 0.5 });
-      gsap.to(driverOneElement, { x: -300, duration: 0.5 });
-      gsap.to(plusButton, { opacity: 0, cursor: "auto" });
-      gsap.to(slidableDriverInfo, { width: 300, duration: 0.5 });
+      gsap.to(webGiViewer, { x: -450, duration: 0.5 });
+      gsap.to(driverOneElement, { x: -450, duration: 0.5 });
+      gsap.to(plusButton, { opacity: 0, cursor: "auto", duration: 0 });
+      gsap.to(slidableDriverInfo, { width: 450, duration: 0.5 });
       gsap.to(crossClose, { opacity: 1, cursor: "pointer", duration: 0.3 });
     }
 
@@ -39,7 +39,7 @@ const PlusButton = (props) => {
 
       gsap.to(webGiViewer, { x: 0, duration: 0.5 });
       gsap.to(driverOneElement, { x: 0, duration: 0.5 });
-      gsap.to(plusButton, { opacity: 1, cursor: "pointer", duration: 0.1 });
+      gsap.to(plusButton, { opacity: 1, cursor: "pointer", duration: 0.5, delay:0.5});
       gsap.to(slidableDriverInfo, { width: 0, duration: 0.5 });
       gsap.to(crossClose, { opacity: 0, cursor: "auto", duration: 0.1 });
 
