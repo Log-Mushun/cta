@@ -16,7 +16,7 @@ const FunctionsText = () => {
     ];
 
     return (
-        <div className='pt-[30%] z-[100] absolute'>
+        <div className='pt-[30%] z-[32] absolute functions-text'>
             <div className='w-full flex flex-row pl-28'>
                 {buttons.map((button, index) => (
                     <div
