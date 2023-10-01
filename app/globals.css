@@ -51,8 +51,8 @@ body {
   color: rgb(var(--foreground-rgb));
   background: '#003b71';
   scrollbar-width: thin; 
-  scrollbar-color: transparent transparent; 
-  overflow-y: auto;
+  scrollbar-color: transparent transparent;
+  overflow: hidden;
   overflow-x:hidden;
   margin: 0;
   padding: 0;

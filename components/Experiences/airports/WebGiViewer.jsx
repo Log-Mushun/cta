@@ -83,9 +83,10 @@ function WebGiViewer() {
                     camera.positionTargetUpdated(true);
                     needsUpdate = false;
                 }
-            });
-    
+            });            
             memoizedScrollAnimation(position, target, onUpdate);
+            const webGiViewerLoadedEvent = new Event("webGiViewerLoaded");
+            document.dispatchEvent(webGiViewerLoadedEvent);
         }, []);
     
         useEffect(() => {

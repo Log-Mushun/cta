@@ -8,33 +8,38 @@ import HeaderGeneral from "@/components/Headers/HeaderGeneral/HeaderGeneral";
 import PlusButton from "@/components/PlusButton";
 import WebGiViewer from "@/components/Experiences/airports/WebGiViewer";
 
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import SlidableDriverInfo from "@/components/Experiences/airports/SlidableDriverInfo";
 import DriverOneFunctions from "@/components/Experiences/airports/DriverOneFunctions";
+import LoadingScreen from "@/components/LoadingScreen";
 
 
 export default function Airports() {
+  const [isWebGiViewerLoaded, setIsWebGiViewerLoaded] = useState(false);
   useEffect(() => {
-      const handleScroll = () => {
+    const handleWebGiViewerLoaded = () => {
+      console.log('WebGiViewer cargado completamente');
+      setIsWebGiViewerLoaded(true);
+      document.body.style.overflowY = 'auto';
+    };
 
-      };
-  
-      window.addEventListener('scroll', handleScroll);
-  
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
+    document.addEventListener('webGiViewerLoaded', handleWebGiViewerLoaded);
+
+    return () => {
+      document.removeEventListener('webGiViewerLoaded', handleWebGiViewerLoaded);
+    };
+  }, []);
   return (
     <>
+    {isWebGiViewerLoaded ? null : <LoadingScreen />}
       <WebGiViewer />
       <HeaderGeneral />
       <HeaderExperience />
       <AirportsComp />
       <div className="relative w-screen mr-0 ml-0">
         <DriverOne />
-        <PlusButton number={1}/>
-        <SlidableDriverInfo number={1}/>
+        <PlusButton number={1} />
+        <SlidableDriverInfo number={1} />
       </div>
       {/*SlidableDriverInfo affects the layout of the next element, so we have to let an empty div here in order to avoid the bug */}
       <div>
@@ -42,7 +47,7 @@ export default function Airports() {
       <div className="relative w-screen mr-0 ml-0">
         <DriverInsights />
       </div>
-      <DriverOneFunctions/>
+      <DriverOneFunctions />
     </>
   )
 }
