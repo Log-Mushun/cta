@@ -40,7 +40,7 @@ const DriverInsights = () => {
 
     return (
         <div className="bg-gradient-radial-a h-[100vh] text-right pr-40 relative" id="driver-insights">
-            <div className='pt-40 pl-10 driver-insightsclass opacity-0 z-[100] absolute'>
+            <div className='pt-40 pl-10 driver-insightsclass opacity-1 z-[100] absolute'>
                 <div className='flex h-[1vh] mb-4 '>
                     {driverData.map((item, itemIndex) => {
                         return (

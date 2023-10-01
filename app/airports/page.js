@@ -7,11 +7,12 @@ import HeaderExperience from "@/components/Headers/HeaderExperience";
 import HeaderGeneral from "@/components/Headers/HeaderGeneral/HeaderGeneral";
 import PlusButton from "@/components/PlusButton";
 import WebGiViewer from "@/components/Experiences/airports/WebGiViewer";
-
-import React, { useState, useEffect } from "react";
 import SlidableDriverInfo from "@/components/Experiences/airports/SlidableDriverInfo";
 import DriverOneFunctions from "@/components/Experiences/airports/DriverOneFunctions";
 import LoadingScreen from "@/components/LoadingScreen";
+
+import React, { useState, useEffect } from "react";
+import GuardianConcept from "@/components/Experiences/airports/GuardianConcept";
 
 
 export default function Airports() {
@@ -31,7 +32,8 @@ export default function Airports() {
   }, []);
   return (
     <>
-    {isWebGiViewerLoaded ? null : <LoadingScreen />}
+
+      <LoadingScreen isVisible={!isWebGiViewerLoaded}/>
       <WebGiViewer />
       <HeaderGeneral />
       <HeaderExperience />
@@ -48,6 +50,7 @@ export default function Airports() {
         <DriverInsights />
       </div>
       <DriverOneFunctions />
+      <GuardianConcept/>
     </>
   )
 }
