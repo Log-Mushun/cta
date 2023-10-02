@@ -7,9 +7,11 @@ const MyContext = createContext();
 // Crea un componente de proveedor para proporcionar el valor del contexto
 const MyContextProvider = ({ children }) => {
   const [variable, setVariable] = useState("experiencia_aeropuerto"); // Inicializa la variable de contexto
+  const [menuOpen, setMenuOpen] = useState(false); // Inicializa la variable de contexto
+
 
   return (
-    <MyContext.Provider value={{ variable, setVariable }}>
+    <MyContext.Provider value={{ variable, setVariable, menuOpen, setMenuOpen }}>
       {children}
     </MyContext.Provider>
   );

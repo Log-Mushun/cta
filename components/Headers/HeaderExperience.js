@@ -1,21 +1,38 @@
-// next image
 import Image from 'next/image';
-
-// next link
 import Link from 'next/link';
-
-// components
 import Socials from '../Socials';
 import LogoDarkComp from '../LogoDarkComp';
 import { FaBars } from 'react-icons/fa';
+import styles from './HeaderGeneral/style.module.scss';
+import { useContext, useState, useEffect } from 'react';
+import { MyContext } from '@/MyContextProvider';
 
-const HeaderExperience= () => {
+const HeaderExperience = () => {
+  const { menuOpen, setMenuOpen } = useContext(MyContext);
+
+  useEffect(() => {
+    const handleEscapeKey = (event) => {
+      if (event.key === 'Escape' && menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscapeKey);
+
+    return () => {
+      // Limpia el event listener cuando el componente se desmonta.
+      document.removeEventListener('keydown', handleEscapeKey);
+    };
+  }, [menuOpen, setMenuOpen]);
+
   return (
-    <header className='absolute z-10 w-full flex items-center px-16 xl:px-0 xl:h-[90px]'>
-       <div className="flex flex-row">
-        <LogoDarkComp/>
+    <header className='fixed  w-full xl:h-[90px] xl:mt-2' style={{zIndex:2000}}>
+      <div className='container mx-auto p-4 xl:p-0'>
+        <div className='flex items-center justify-between'>
+          <LogoDarkComp />
+          <FaBars className='h-8 w-8' onClick={() => setMenuOpen(!menuOpen)} />
+        </div>
       </div>
- 
     </header>
   );
 };

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const LogoDarkComp = () => {
     return(
-        <div className='w-48 fixed bg-transparent'>
+        <div className='w-48 bg-transparent'>
             <Image
             src={'/logo_dark.svg'}
             width={300}
