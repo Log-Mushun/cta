@@ -2,6 +2,7 @@ import { ImCross } from 'react-icons/im'
 import Image from 'next/image'
 import gsap from 'gsap'
 import React, { useEffect, useState } from "react";
+import ParticlesContainer from '@/components/ParticlesContainer';
 
 const SlidableDriverInfo = (props) => {
   const [clicked, setClicked] = new useState(false);
@@ -46,12 +47,13 @@ const SlidableDriverInfo = (props) => {
           height={20}
           id={`cross-close${props.number}`}
           alt="a plus sign, it looks like a vertical cross"
-          className="absolute cursor-pointer rotate-45 top-10 right-10"
+          className="absolute cursor-pointer rotate-45 top-10 right-10 z-[30]"
           onClick={closeFunction}
         />
       </div>
       <div className='flex flex-row'>
-        <div className='bg-[#021322] w-[40%] h-[100vh]'>
+        <div className='bg-[#021322] w-[40%] h-[100vh] relative'>
+          <ParticlesContainer/>
         </div>
         <div className='relative bg-gradient-to-t from-[#021322] to-[#213541]  h-[100vh] w-[60%]'>
           <div>

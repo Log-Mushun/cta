@@ -21,10 +21,10 @@ const AirportsComp = () => {
         <I18nextProvider i18n={i18nfile}>
         <div className="bg-gradient-radial-a h-[100vh] flex flex-col justify-between" id="airports-comp">
         <div className="flex flex-col justify-between items-center h-screen">
-            <div className="text-center pt-[4rem]">
+            <div className="text-center pt-[4rem] z-[11]">
                 <h1 className="text-7xl experience_title">{t('header-airport')}</h1>
             </div>
-            <div className="flex flex-row self-center scrolldown">
+            <div className="flex flex-row self-center scrolldown z-[11]">
                     <motion.div
                         animate={{
                             opacity: [0, 1, 0],

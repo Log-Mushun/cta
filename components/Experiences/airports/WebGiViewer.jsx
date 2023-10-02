@@ -20,6 +20,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // custom component to controll animation
 import { scrollAnimation } from '@/lib/scroll-animation';
+import Plexus from '@/components/Plexus';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,7 +95,7 @@ function WebGiViewer() {
         }, [])
       }
     return (
-        <div className='fixed inset-0 w-full h-full z-10 webgi-viewer-class' id='webgi-viewer'>
+        <div className='fixed inset-0 w-full h-full z-[12] webgi-viewer-class' id='webgi-viewer'>
             <canvas className='w-[100%]' ref={canvasRef} />
         </div>
     )

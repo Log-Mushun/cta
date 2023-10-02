@@ -129,7 +129,7 @@ const Home = () => {
             </div>
           </div>
           <div className='w-full h-full absolute right-0 bottom-0 z-0'>
-            <Plexus />
+            <Plexus isStart={true} />
             {/* particles */}
             {/* <ParticlesContainer /> */}
           </div>
