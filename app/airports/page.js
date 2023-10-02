@@ -13,6 +13,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 
 import React, { useState, useEffect } from "react";
 import GuardianConcept from "@/components/Experiences/airports/GuardianConcept";
+import Plexus from "@/components/Plexus";
 
 
 export default function Airports() {
@@ -35,6 +36,7 @@ export default function Airports() {
 
       <LoadingScreen isVisible={!isWebGiViewerLoaded}/>
       <WebGiViewer />
+      <Plexus isStart={false}/>
       <HeaderGeneral />
       <HeaderExperience />
       <AirportsComp />
