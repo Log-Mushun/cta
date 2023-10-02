@@ -26,7 +26,7 @@ const HeaderExperience = () => {
   }, [menuOpen, setMenuOpen]);
 
   return (
-    <header className='fixed  w-full xl:h-[90px] xl:mt-2' style={{zIndex:2000}}>
+    <header className='fixed  w-full xl:h-[90px] xl:mt-2' style={{zIndex:200}} id="header-experience">
       <div className='container mx-auto p-4 xl:p-0'>
         <div className='flex items-center justify-between'>
           <LogoDarkComp />

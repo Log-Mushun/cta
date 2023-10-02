@@ -95,7 +95,7 @@ function WebGiViewer() {
         }, [])
       }
     return (
- <div className='fixed inset-0 z-10 webgi-viewer-class' id='webgi-viewer'>
+ <div className='fixed inset-0 z-[12] webgi-viewer-class' id='webgi-viewer'>
   <canvas ref={canvasRef} className="w-full  h-full" />
 </div>
 

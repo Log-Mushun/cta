@@ -10,10 +10,11 @@ import WebGiViewer from "@/components/Experiences/airports/WebGiViewer";
 import SlidableDriverInfo from "@/components/Experiences/airports/SlidableDriverInfo";
 import DriverOneFunctions from "@/components/Experiences/airports/DriverOneFunctions";
 import LoadingScreen from "@/components/LoadingScreen";
+import Plexus from "@/components/Plexus";
+import { MyContextProvider } from "@/MyContextProvider";
 
 import React, { useState, useEffect } from "react";
 import GuardianConcept from "@/components/Experiences/airports/GuardianConcept";
-import Plexus from "@/components/Plexus";
 
 
 export default function Airports() {
@@ -32,12 +33,11 @@ export default function Airports() {
     };
   }, []);
   return (
-    <>
-
+  <MyContextProvider>
       <LoadingScreen isVisible={!isWebGiViewerLoaded}/>
       <WebGiViewer />
       <Plexus isStart={false}/>
-      <HeaderGeneral />
+      <HeaderGeneral/>
       <HeaderExperience />
       <AirportsComp />
       <div className="relative w-screen mr-0 ml-0">
@@ -53,6 +53,6 @@ export default function Airports() {
       </div>
       <DriverOneFunctions />
       <GuardianConcept/>
-    </>
+    </MyContextProvider>
   )
 }

@@ -28,7 +28,7 @@ const LoadingScreen = ({isVisible}) => {
 
 
     return (
-        <div ref={loadingScreenRef} className='h-screen fixed w-screen bg-gradient-radial-c flex flex-col justify-center items-center z-[100]'>Loading</div>
+        <div ref={loadingScreenRef} className='h-screen fixed w-screen bg-gradient-radial-c flex flex-col justify-center items-center z-[300]'>Loading</div>
     )
 }
 

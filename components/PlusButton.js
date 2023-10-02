@@ -15,6 +15,7 @@ const PlusButton = (props) => {
   var slidableDriverInfo;
   var crossClose;
   var driverInsights;
+  var headerExperience;
 
 
   const handleClick = () => {
@@ -27,6 +28,7 @@ const PlusButton = (props) => {
       gsap.to(plusButton, { opacity: 0, cursor: "auto", duration: 0 });
       gsap.to(slidableDriverInfo, { width: 450, duration: 0.5 });
       gsap.to(crossClose, { opacity: 1, cursor: "pointer", duration: 0.3 });
+      gsap.to(headerExperience, {zIndex: 30, duration: 0.1 });
     }
 
     setClicked(!clicked);
@@ -42,6 +44,7 @@ const PlusButton = (props) => {
       gsap.to(plusButton, { opacity: 1, cursor: "pointer", duration: 0.5, delay:0.5});
       gsap.to(slidableDriverInfo, { width: 0, duration: 0.5 });
       gsap.to(crossClose, { opacity: 0, cursor: "auto", duration: 0.1 });
+      gsap.to(headerExperience, {zIndex: 200, duration: 0.1 });
 
       setClicked(false);
     }
@@ -54,6 +57,7 @@ const PlusButton = (props) => {
     slidableDriverInfo = document.getElementById(`slidable-driver-info${props.number}`);
     crossClose = document.getElementById(`cross-close${props.number}`);
     driverInsights = document.getElementById("driver-insights");
+    headerExperience = document.getElementById("header-experience");
   }
 
   useEffect(() => {

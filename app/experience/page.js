@@ -48,7 +48,9 @@ export default function Experience() {
 <HeaderExperience />
 <AirportsComp />
 <div className="relative w-screen mr-0 ml-0">
-  <DriverOne />
+  <div className="bg-gradient-radial-b">
+    <DriverOne />
+  </div>
   <PlusButton number={1} />
   <SlidableDriverInfo number={1} />
 </div>
