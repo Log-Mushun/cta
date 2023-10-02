@@ -6,8 +6,7 @@ function EmptySection() {
     <div
         style={{
             height:'100vh',
-            backgroundClolor:'#0F3A70',
-            
+            backgroundColor:'black',            
         }}
     />
   )
