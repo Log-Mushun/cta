@@ -22,6 +22,7 @@ import EmptySection from "@/components/EmptySection";
 import GuardianConceptUnido from "@/components/Experiences/airports/GuardianConceptUnido";
 import GuardianConceptUnido2 from "@/components/Experiences/airports/GuardianConceptUnido2";
 import ProgressBar from "@/components/ProgressBar/ProgressBar";
+import SplineBanda from "@/components/Spline/SplineBanda";
 
 
 export default function Experience() {
@@ -72,6 +73,7 @@ export default function Experience() {
 
 <GalleryAirports/>
 <EmptySection/>
+<SplineBanda/>
 
 </>
         </MyContextProvider>
