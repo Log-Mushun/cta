@@ -40,11 +40,11 @@ const DriverInsights = () => {
 
     return (
         <div className="bg-gradient-radial-a h-[100vh] text-right pr-40 relative" id="driver-insights">
-            <div className='pt-40 pl-10 driver-insightsclass opacity-0 z-[100] absolute'>
-                <div className='flex h-[1vh] mb-4 '>
+            <div className='driver-insightsclass opacity-0 z-[100] absolute w-[30%] pt-40 pl-10'>
+                <div className='flex h-[1vh] mb-4'>
                     {driverData.map((item, itemIndex) => {
                         return (
-                            <div key={itemIndex} className='w-[20vh]'>
+                            <div key={itemIndex} className='w-[20rem]'>
                                 <div
                                     key={itemIndex}
                                     className={`cursor-pointer top-0 left-0 w-[15vh] h-[1vh] ${itemIndex === index ? 'bg-white' : 'bg-[#b2cde0]'} hover:bg-white transition-colors duration-200`}
@@ -54,23 +54,22 @@ const DriverInsights = () => {
                         );
                     })}
                 </div>
-                <div className=''>
-                    <div>
-                        {driverData[index].info.map((item, itemIndex) => {
-                            return (
-                                <div key={itemIndex} className='flex-1 flex flex-col md:flex-col max-w-max gap-x-2 items-start text-white w-[30%]'>
-                                    <div className='font-light mb-2 md:mb-0 text-start'>
-                                        <h1 className='text-[200%]'>
-                                            {driverData[index].title}
-                                        </h1>
-                                    </div>
-                                    <div className='mb-2 md:mb-0 text-start'>
-                                        <p className='text-[70%] text-white'>{item.description}</p></div>
+                <div>
+                    {driverData[index].info.map((item, itemIndex) => {
+                        return (
+                            <div key={itemIndex} className='flex-1 flex flex-col md:flex-col max-w-max gap-x-2 items-start text-white'>
+                                <div className='font-light mb-2 md:mb-0 text-start'>
+                                    <h1 className='text-[200%]'>
+                                        {driverData[index].title}
+                                    </h1>
                                 </div>
-                            );
-                        })}
-                    </div>
+                                <div className='mb-2 md:mb-0 text-start'>
+                                    <p className='text-[70%] text-white'>{item.description}</p></div>
+                            </div>
+                        );
+                    })}
                 </div>
+
             </div>
         </div>
     );
