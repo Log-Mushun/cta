@@ -44,10 +44,10 @@ const DriverInsights = () => {
                 <div className='flex h-[1vh] mb-4 '>
                     {driverData.map((item, itemIndex) => {
                         return (
-                            <div key={itemIndex} className='xl:w-[20vh]'>
+                            <div key={itemIndex} className='xl:w-[20vw] '>
                                 <div
                                     key={itemIndex}
-                                    className={`cursor-pointer top-0 left-0 w-[30vw] h-[1vh] ${itemIndex === index ? 'bg-white' : 'bg-[#b2cde0]'} hover:bg-white transition-colors duration-200`}
+                                    className={`cursor-pointer top-0 left-0  xl:w-[15vw] sm:w-[15vw] h-[1vh] ${itemIndex === index ? 'bg-white' : 'bg-[#b2cde0]'} hover:bg-white transition-colors duration-200`}
                                     onClick={() => setIndex(itemIndex)}
                                 ></div>
                             </div>

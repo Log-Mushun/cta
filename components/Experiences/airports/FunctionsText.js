@@ -21,7 +21,7 @@ const FunctionsText = () => {
                 {buttons.map((button, index) => (
                     <div
                         key={index}
-                        className={`cursor-pointer mr-8 ${index === 0 ? '0' : '10'} xl:w-[15vh] h-[1vh] hover:bg-white transition-colors duration-200 ${selectedIndex === index ? 'bg-white' : 'bg-[#b2cde0]'}`}
+                        className={`cursor-pointer mr-8 ${index === 0 ? '0' : '10'} lg:w-[15vh] w-[15vw] h-[1vh] hover:bg-white transition-colors duration-200 ${selectedIndex === index ? 'bg-white' : 'bg-[#b2cde0]'}`}
                         onClick={() => handleClick(index)}
                     ></div>
                 ))}
