@@ -26,6 +26,7 @@ const SlidableDriverInfo = (props) => {
       gsap.to(slidableDriverInfo, { width: 0, duration: 0.5 });
       gsap.to(crossClose, { opacity: 0, cursor: "auto", duration: 0.1 });
       gsap.to(headerExperience, {zIndex: 200, duration: 0.1 });
+      gsap.to(driverInsights, { opacity:1, duration: 0.5 });
     }
   };
 
@@ -56,12 +57,12 @@ const SlidableDriverInfo = (props) => {
       </div>
       <div className='flex flex-row'>
         <div className='bg-[#021322] w-[40%] h-[100vh] relative'>
-          <ParticlesContainer/>
+          <ParticlesContainer key={props.number}/>
         </div>
         <div className='relative bg-gradient-to-t from-[#021322] to-[#213541]  h-[100vh] w-[60%]'>
           <div>
             <h1 className='text-2xl pt-16 pl-10'>
-              Driver #1
+              {props.title}
             </h1>
             <Image
               src={'/images/slidable1.png'}
