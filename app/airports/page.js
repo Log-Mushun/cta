@@ -65,7 +65,7 @@ export default function Airports() {
           console.log('start');
         },
         duration: 1,
-        onComplete: () => {scrollTween = null; },
+        onComplete: () => {scrollTween = null; document.body.style.overflow = 'auto';},
         overwrite: true
       });
     }
