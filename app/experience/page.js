@@ -19,6 +19,7 @@ import { GlobalStyle } from "../styles/GlobalStyle";
 import { MyContextProvider } from "@/MyContextProvider";
 import LoadingScreen from "@/components/LoadingScreen";
 import EmptySection from "@/components/EmptySection";
+import ProgressBar from "@/components/ProgressBar/ProgressBar";
 
 
 export default function Experience() {
@@ -41,7 +42,7 @@ export default function Experience() {
   return (
     <MyContextProvider>
       <>
-
+<ProgressBar/>
 <LoadingScreen isVisible={!isWebGiViewerLoaded}/>
 <WebGiViewer />
 <HeaderGeneral />

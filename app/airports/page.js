@@ -18,6 +18,7 @@ import GuardianConcept from "@/components/Experiences/airports/GuardianConcept";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import ProgressBar from "@/components/ProgressBar/ProgressBar";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -75,6 +76,7 @@ export default function Airports() {
 }, []);
 return (
   <MyContextProvider>
+    <ProgressBar/>
     <LoadingScreen isVisible={!isWebGiViewerLoaded} />
     <WebGiViewer />
     <Plexus isStart={false} />
