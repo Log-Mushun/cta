@@ -23,6 +23,7 @@ import GuardianConceptUnido from "@/components/Experiences/airports/GuardianConc
 import GuardianConceptUnido2 from "@/components/Experiences/airports/GuardianConceptUnido2";
 import ProgressBar from "@/components/ProgressBar/ProgressBar";
 import SplineBanda from "@/components/Spline/SplineBanda";
+import MusicPlayer from "@/components/MusicPlayer/MusicPlayer";
 
 
 export default function Experience() {
@@ -45,6 +46,7 @@ export default function Experience() {
   return (
     <MyContextProvider>
       <ProgressBar/>
+      <MusicPlayer/>
       <>
 
 <LoadingScreen isVisible={!isWebGiViewerLoaded}/>
