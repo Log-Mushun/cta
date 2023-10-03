@@ -24,11 +24,19 @@ const PlusButton = (props) => {
 
     if (driverOneElement) {
       gsap.to(webGiViewer, { x: -450, duration: 0.5 });
-      gsap.to(driverOneElement, { x: -450, duration: 0.5 });
       gsap.to(plusButton, { opacity: 0, cursor: "auto", duration: 0 });
       gsap.to(slidableDriverInfo, { width: 450, duration: 0.5 });
       gsap.to(crossClose, { opacity: 1, cursor: "pointer", duration: 0.3 });
-      gsap.to(headerExperience, {zIndex: 30, duration: 0.1 });
+      gsap.to(headerExperience, { zIndex: 30, duration: 0.1 });
+
+      if (props.number == 1) {
+        gsap.to(driverOneElement, { x: -450, duration: 0.5 });
+      }
+
+      if (props.number == 2) {
+        gsap.to(driverInsights, { opacity: 0, duration: 0.5 });
+      }
+
     }
 
     setClicked(!clicked);
@@ -40,11 +48,18 @@ const PlusButton = (props) => {
     if (clicked) {
 
       gsap.to(webGiViewer, { x: 0, duration: 0.5 });
-      gsap.to(driverOneElement, { x: 0, duration: 0.5 });
-      gsap.to(plusButton, { opacity: 1, cursor: "pointer", duration: 0.5, delay:0.5});
+      gsap.to(plusButton, { opacity: 1, cursor: "pointer", duration: 0.5, delay: 0.5 });
       gsap.to(slidableDriverInfo, { width: 0, duration: 0.5 });
       gsap.to(crossClose, { opacity: 0, cursor: "auto", duration: 0.1 });
-      gsap.to(headerExperience, {zIndex: 200, duration: 0.1 });
+      gsap.to(headerExperience, { zIndex: 200, duration: 0.1 });
+
+      if (props.number == 1) {
+        gsap.to(driverOneElement, { x: 0, duration: 0.5 });
+      }
+
+      if (props.number == 2) {
+        gsap.to(driverInsights, { opacity: 1, duration: 0.5 });
+      }
 
       setClicked(false);
     }
@@ -58,6 +73,8 @@ const PlusButton = (props) => {
     crossClose = document.getElementById(`cross-close${props.number}`);
     driverInsights = document.getElementById("driver-insights");
     headerExperience = document.getElementById("header-experience");
+
+    driverInsights = document.getElementById("driver-insights");
   }
 
   useEffect(() => {
@@ -71,7 +88,7 @@ const PlusButton = (props) => {
   return (
     <div key={props.number}>
       <div
-        className={`flex items-center justify-center w-24 h-24 absolute right-[60%] top-[8%] cursor-pointer z-1 opacity-0 plus-button${props.number}`}
+        className={`flex items-center justify-center w-24 h-24 absolute right-[50%] top-[35%] cursor-pointer z-1 opacity-0 plus-button${props.number}`}
         id={`plus-button${props.number}`}
         onClick={handleClick}
         key={props.number}

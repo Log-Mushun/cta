@@ -10,14 +10,16 @@ import WebGiViewer from "@/components/Experiences/airports/WebGiViewer";
 import SlidableDriverInfo from "@/components/Experiences/airports/SlidableDriverInfo";
 import DriverOneFunctions from "@/components/Experiences/airports/DriverOneFunctions";
 import LoadingScreen from "@/components/LoadingScreen";
+import SlidableController from "@/components/Experiences/airports/SlidableController";
 import Plexus from "@/components/Plexus";
 import { MyContextProvider } from "@/MyContextProvider";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import GuardianConcept from "@/components/Experiences/airports/GuardianConcept";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import ParticlesContainer from "@/components/ParticlesContainer";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -84,22 +86,29 @@ return (
       <AirportsComp />
     </section>
     <section className="panel h-full">
-      <div className="relative w-screen mr-0 ml-0">
+      <SlidableController>
         <DriverOne />
         <PlusButton number={1} />
-        <SlidableDriverInfo number={1} />
-      </div>
+        <SlidableDriverInfo number={1} title='Driver #1'/>
+      </SlidableController>
     </section>
     {/*SlidableDriverInfo affects the layout of the next element, so we have to let an empty div here in order to avoid the bug */}
     <div>
     </div>
     <section className="panel h-full">
-      <div className="relative w-screen mr-0 ml-0">
-        <DriverInsights />
-      </div>
+    <SlidableController>
+        <DriverInsights/>
+        <PlusButton number={2} />
+        <SlidableDriverInfo number={2} title='Insights Title'
+        />
+      </SlidableController>
     </section>
     <section className="panel h-full">
-      <DriverOneFunctions />
+    <SlidableController>
+        <DriverOneFunctions/>
+        <PlusButton number={3} />
+        <SlidableDriverInfo number={3} title='Functions Title'/>
+      </SlidableController>
     </section>
     <GuardianConcept />
   </MyContextProvider>

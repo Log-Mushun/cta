@@ -2,17 +2,18 @@ import { Particles } from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import React, { useCallback } from 'react';
 
-const ParticlesContainer = () => {
+const ParticlesContainer = ({ key }) => {
   //  init
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async () => {}, []);
+  const particlesLoaded = useCallback(async () => { }, []);
 
   return (
     <Particles
-      className='w-[100vh] h-full absolute left-0 bottom-0 mix-blend-screen z-0 flex items-start'
+      key={key}
+      className='w-[100vh] h-full absolute left-0 bottom-0  flex items-start'
       init={particlesInit}
       loaded={particlesLoaded}
       options={{
