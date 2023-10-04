@@ -43,7 +43,6 @@ export default function Airports() {
       onToggle: self => self.isActive && !scrollTween && goToSectionOne()
     });
 
-
     let panels = gsap.utils.toArray(".panel"),
       observer = ScrollTrigger.normalizeScroll(true),
       scrollTween;
@@ -66,56 +65,65 @@ export default function Airports() {
           console.log('start');
         },
         duration: 1,
-        onComplete: () => {scrollTween = null; document.body.style.overflow = 'auto';},
+        onComplete: () => { scrollTween = null; document.body.style.overflow = 'auto'; },
         overwrite: true
       });
     }
 
-  document.addEventListener('webGiViewerLoaded', handleWebGiViewerLoaded);
+    document.addEventListener('webGiViewerLoaded', handleWebGiViewerLoaded);
 
-  return () => {
-    document.removeEventListener('webGiViewerLoaded', handleWebGiViewerLoaded);
-  };
-}, []);
-return (
-  <MyContextProvider>
-    <div className="h-full">
-    <ProgressBar/>
-    <LoadingScreen isVisible={!isWebGiViewerLoaded} />
-    <WebGiViewer />
-    <Plexus isStart={false} />
-    <HeaderGeneral />
-    <HeaderExperience />
-    <section className="panel h-full">
-      <AirportsComp />
-    </section>
-    <section className="panel h-full">
-      <SlidableController>
-        <DriverOne />
-        <PlusButton number={1} />
-        <SlidableDriverInfo number={1} title='Driver #1'/>
-      </SlidableController>
-    </section>
-    {/*SlidableDriverInfo affects the layout of the next element, so we have to let an empty div here in order to avoid the bug */}
-    <div>
-    </div>
-    <section className="panel h-full">
-    <SlidableController>
-        <DriverInsights/>
-        <PlusButton number={2} />
-        <SlidableDriverInfo number={2} title='Insights Title'
-        />
-      </SlidableController>
-    </section>
-    <section className="panel h-full">
-    <SlidableController>
-        <DriverOneFunctions/>
-        <PlusButton number={3} />
-        <SlidableDriverInfo number={3} title='Functions Title'/>
-      </SlidableController>
-    </section>
-    <GuardianConcept />
-    </div>
-  </MyContextProvider>
-)
+    return () => {
+      document.removeEventListener('webGiViewerLoaded', handleWebGiViewerLoaded);
+    };
+  }, []);
+  return (
+    <MyContextProvider>
+      <div className="h-full">
+        <ProgressBar />
+        <LoadingScreen isVisible={true} />
+        <WebGiViewer />
+        <Plexus isStart={false} />
+        <HeaderGeneral />
+        <HeaderExperience />
+        <section className="panel h-full">
+          <AirportsComp />
+        </section>
+        <section className="panel h-full">
+          <SlidableController>
+            <DriverOne />
+            <PlusButton number={1}
+              right="right-[60%]"
+              top="top-[15%]" />
+            <SlidableDriverInfo number={1} title='Driver #1' />
+          </SlidableController>
+        </section>
+        {/*SlidableDriverInfo affects the layout of the next element, so we have to let an empty div here in order to avoid the bug */}
+        <div>
+        </div>
+        <section className="panel h-full">
+          <SlidableController>
+            <DriverInsights />
+            <PlusButton number={2}
+              right="right-[35%]"
+              top="bottom-[20%]"
+            />
+            <h1 className="absolute right-[15%] bottom-[25%] z-[11] text-4xl">Another title</h1>
+            <SlidableDriverInfo number={2} title='Insights Title'
+            />
+          </SlidableController>
+        </section>
+        <section className="panel h-full">
+          <SlidableController>
+            <DriverOneFunctions />
+            <PlusButton number={3}
+              right="left-[9%]"
+              top="top-[20%]" />
+            <h1 className="absolute left-[18%] top-[25%] z-[11] text-4xl">Functions title</h1>
+            <SlidableDriverInfo number={3} title='Functions Title' />
+          </SlidableController>
+        </section>
+        <GuardianConcept />
+      </div>
+    </MyContextProvider>
+  )
 }

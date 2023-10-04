@@ -87,26 +87,28 @@ const PlusButton = (props) => {
 
   return (
     <div key={props.number}>
-      <div
-        className={`flex items-center justify-center w-24 h-24 absolute right-[50%] top-[35%] cursor-pointer z-1 opacity-0 plus-button${props.number}`}
-        id={`plus-button${props.number}`}
-        onClick={handleClick}
-        key={props.number}
-      >
-        <Image
-          src={"/circle_outside_plus.svg"}
-          width={200}
-          height={200}
-          alt="a rotating circle"
-          className="relative animate-spin"
-        />
-        <Image
-          src={"/icon_button_driverv2.svg"}
-          width={50}
-          height={50}
-          alt="a plus sign, it looks like a vertical cross"
-          className="absolute"
-        />
+      <div className="Flex flex-row">
+        <div
+          className={`flex items-center justify-center w-24 h-24 absolute ${props.right} ${props.top} cursor-pointer z-1 opacity-0 plus-button${props.number}`}
+          id={`plus-button${props.number}`}
+          onClick={handleClick}
+          key={props.number}
+        >
+          <Image
+            src={"/circle_outside_plus.svg"}
+            width={200}
+            height={200}
+            alt="a rotating circle"
+            className="relative animate-spin"
+          />
+          <Image
+            src={"/icon_button_driverv2.svg"}
+            width={50}
+            height={50}
+            alt="a plus sign, it looks like a vertical cross"
+            className="absolute"
+          />
+        </div>
       </div>
     </div>
   );
