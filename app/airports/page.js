@@ -35,40 +35,40 @@ export default function Airports() {
     };
 
 
-    const driverOne = document.getElementById('driver-one');
-    ScrollTrigger.create({
-      trigger: driverOne,
-      start: "top bottom",
-      end: "+=199%",
-      onToggle: self => self.isActive && !scrollTween && goToSectionOne()
-    });
+    // const driverOne = document.getElementById('driver-one');
+    // ScrollTrigger.create({
+    //   trigger: driverOne,
+    //   start: "top bottom",
+    //   end: "+=199%",
+    //   onToggle: self => self.isActive && !scrollTween && goToSectionOne()
+    // });
 
-    let panels = gsap.utils.toArray(".panel"),
-      observer = ScrollTrigger.normalizeScroll(true),
-      scrollTween;
+    // let panels = gsap.utils.toArray(".panel"),
+    //   observer = ScrollTrigger.normalizeScroll(true),
+    //   scrollTween;
 
-    // on touch devices, ignore touchstart events if there's an in-progress tween so that touch-scrolling doesn't interrupt and make it wonky
-    document.addEventListener("touchstart", e => {
-      if (scrollTween) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-      }
-    }, { capture: true, passive: false })
+    // // on touch devices, ignore touchstart events if there's an in-progress tween so that touch-scrolling doesn't interrupt and make it wonky
+    // document.addEventListener("touchstart", e => {
+    //   if (scrollTween) {
+    //     e.preventDefault();
+    //     e.stopImmediatePropagation();
+    //   }
+    // }, { capture: true, passive: false })
 
-    function goToSectionOne() {
-      scrollTween = gsap.to(window, {
-        scrollTo: { y: innerHeight, autoKill: false },
-        onStart: () => {
-          document.body.style.overflow = 'hidden';
-          observer.disable(); // for touch devices, as soon as we start forcing scroll it should stop any current touch-scrolling, so we just disable() and enable() the normalizeScroll observer
-          observer.enable();
-          console.log('start');
-        },
-        duration: 1,
-        onComplete: () => { scrollTween = null; document.body.style.overflow = 'auto'; },
-        overwrite: true
-      });
-    }
+    // function goToSectionOne() {
+    //   scrollTween = gsap.to(window, {
+    //     scrollTo: { y: innerHeight, autoKill: false },
+    //     onStart: () => {
+    //       document.body.style.overflow = 'hidden';
+    //       observer.disable(); // for touch devices, as soon as we start forcing scroll it should stop any current touch-scrolling, so we just disable() and enable() the normalizeScroll observer
+    //       observer.enable();
+    //       console.log('start');
+    //     },
+    //     duration: 1,
+    //     onComplete: () => { scrollTween = null; document.body.style.overflow = 'auto'; },
+    //     overwrite: true
+    //   });
+    // }
 
     document.addEventListener('webGiViewerLoaded', handleWebGiViewerLoaded);
 
@@ -80,7 +80,7 @@ export default function Airports() {
     <MyContextProvider>
       <div className="h-full">
         <ProgressBar />
-        <LoadingScreen isVisible={true} />
+        <LoadingScreen isVisible={!isWebGiViewerLoaded} />
         <WebGiViewer />
         <Plexus isStart={false} />
         <HeaderGeneral />

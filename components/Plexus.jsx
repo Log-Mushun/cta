@@ -2,7 +2,7 @@ const Plexus = (props) => {
   if(props.isStart){
     return (
       <div className="hidden lg:block">
-        <video autoPlay={true} loop muted className="h-screen mix-blend-hard-light opacity-70 z-0">
+        <video autoPlay={true} loop muted className="h-screen opacity-70 fixed left-0 top-0 z-0">
           <source src="videos/plexusv3.webm" type="video/webm" />
         </video>
       </div>
