@@ -11,8 +11,8 @@ import styled from "styled-components";
 const Section = styled.section`
 height: 100vh;
 position: relative;
-  z-index: 1;
-  background-color: #0F3A70;
+  z-index: 11;
+  background-color: transparent;
 `;
 
 const V1 = styled.video`

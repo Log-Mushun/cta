@@ -15,18 +15,34 @@ const SlidableDriverInfo = (props) => {
   var crossClose;
   var driverInsights;
   var headerExperience;
+  var buttonTitle2;
+  var buttonTitle3;
+  var driverOneFunctions;
 
   const closeFunction = () => {
     getTheElements();
 
     {
       gsap.to(webGiViewer, { x: 0, duration: 0.5 });
-      gsap.to(driverOneElement, { x: 0, duration: 0.5 });
       gsap.to(plusButton, { opacity: 1, cursor: "pointer", duration: 0.5, delay: 0.4 });
       gsap.to(slidableDriverInfo, { width: 0, duration: 0.5 });
       gsap.to(crossClose, { opacity: 0, cursor: "auto", duration: 0.1 });
       gsap.to(headerExperience, {zIndex: 200, duration: 0.1 });
-      gsap.to(driverInsights, { opacity:1, duration: 0.5 });
+
+      if (props.number == 1) {
+        gsap.to(driverOneElement, { x: 0, duration: 0.5 });
+      }
+
+      if (props.number == 2) {
+        gsap.to(driverInsights, { opacity: 1, duration: 0.5 });
+        gsap.to(buttonTitle2, { opacity: 1, duration: 0.5 });
+      }
+
+      if (props.number == 3) {
+        gsap.to(driverOneFunctions, { opacity: 1, duration: 0.5 });
+        gsap.to(buttonTitle3, { opacity: 1, duration: 0.5 });
+      }
+
     }
   };
 
@@ -37,8 +53,13 @@ const SlidableDriverInfo = (props) => {
     plusButton = document.getElementById(`plus-button${props.number}`);
     slidableDriverInfo = document.getElementById(`slidable-driver-info${props.number}`);
     crossClose = document.getElementById(`cross-close${props.number}`);
-    driverInsights = document.getElementById("driver-insights");
     headerExperience = document.getElementById("header-experience");
+        
+    driverInsights = document.getElementById("driver-insights");
+    buttonTitle2 = document.getElementById("button-title2");
+    
+    driverOneFunctions = document.getElementById("driverone-functions");
+    buttonTitle3 = document.getElementById("button-title3");
   }
 
   return (
@@ -56,35 +77,35 @@ const SlidableDriverInfo = (props) => {
         />
       </div>
       <div className='flex flex-row'>
-        <div className='bg-[#021322] w-[40%] h-[100vh] relative'>
+        <div className='bg-[#021322] w-[20%] h-[100vh] relative'>
           <ParticlesContainer key={props.number}/>
         </div>
-        <div className='relative bg-gradient-to-t from-[#021322] to-[#213541]  h-[100vh] w-[60%]'>
-          <div>
+        <div className='relative bg-gradient-to-t from-[#021322] to-[#213541]  h-[100vh] w-[80%]'>
+          <div className='flex flex-col'>
             <h1 className='text-2xl pt-16 pl-10'>
               {props.title}
             </h1>
             <Image
               src={'/images/slidable1.png'}
-              width={350}
-              height={400}
-              className='pt-5'
+              width={200}
+              height={100}
+              className='pt-5 flex self-center justify-self-center'
             />
             <div>
               <p className='pt-3 pl-3 pr-3 text-xs'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt..
+                {props.text}
               </p>
             </div>
             <div>
               <iframe
-                width="270"
+                width="300"
                 height="160"
                 src={`https://www.youtube.com/embed/${videoId}`}
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture "
                 allowfullscreen
-                className='absolute bottom-0'
+                className='pl-14 absolute bottom-0 flex self-center justify-self-center'
               ></iframe>
             </div>
           </div>

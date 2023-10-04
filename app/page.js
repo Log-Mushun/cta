@@ -90,7 +90,7 @@ const Home = () => {
                 animate='show'
                 exit='hidden'
               >
-                <Link href='/experience'>
+                <Link href='/airports'>
                   <div className='bg-transparent hover:bg-hoverbg hover:bg-cover hover:bg-no-repeat h-full w-[12rem] flex justify-end flex-col items-center'>
                     <FaSuitcaseRolling size={128} className='text-[#003d71] lg:w-36 lg:h-36 md:w-20 md:h-20 w-14 z-10 hidden md:inline' />
                     <h1 className='text-[#003d71] text-center pt-5 z-10 text-2xl'>Aeropuertos</h1>

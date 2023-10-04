@@ -37,7 +37,7 @@ const AirportsComp = () => {
                     >
                         <BsDot className="h-8 w-8" />
                     </motion.div>
-                    <h2 className="text-xl">Scroll down</h2>
+                    <h2 className="text-xl">Desliza hacia abajo</h2>
                 </div>
         </div>
             <AirportsFooter/>

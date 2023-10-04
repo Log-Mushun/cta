@@ -51,6 +51,7 @@ function WebGiViewer() {
             const camera = viewer.scene.activeCamera;
             const position = camera.position;
             const target = camera.target;
+            viewer.scene.backgroundColor = null;
     
             await viewer.addPlugin(GBufferPlugin);        
             // Tonemap allows us to remove the background of the model

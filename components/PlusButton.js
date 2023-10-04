@@ -16,6 +16,9 @@ const PlusButton = (props) => {
   var crossClose;
   var driverInsights;
   var headerExperience;
+  var buttonTitle2;
+  var buttonTitle3;
+  var driverOneFunctions;
 
 
   const handleClick = () => {
@@ -25,7 +28,7 @@ const PlusButton = (props) => {
     if (driverOneElement) {
       gsap.to(webGiViewer, { x: -450, duration: 0.5 });
       gsap.to(plusButton, { opacity: 0, cursor: "auto", duration: 0 });
-      gsap.to(slidableDriverInfo, { width: 450, duration: 0.5 });
+      gsap.to(slidableDriverInfo, { width: 500, duration: 0.5 });
       gsap.to(crossClose, { opacity: 1, cursor: "pointer", duration: 0.3 });
       gsap.to(headerExperience, { zIndex: 30, duration: 0.1 });
 
@@ -34,7 +37,14 @@ const PlusButton = (props) => {
       }
 
       if (props.number == 2) {
-        gsap.to(driverInsights, { opacity: 0, duration: 0.5 });
+
+        gsap.to(buttonTitle2, { opacity: 0, duration: 0.5 });
+      }
+
+      
+      if (props.number == 3) {
+        gsap.to(driverOneFunctions, { opacity: 0, duration: 0.5 });
+        gsap.to(buttonTitle3, { opacity: 0, duration: 0.5 });
       }
 
     }
@@ -59,6 +69,12 @@ const PlusButton = (props) => {
 
       if (props.number == 2) {
         gsap.to(driverInsights, { opacity: 1, duration: 0.5 });
+        gsap.to(buttonTitle2, { opacity: 1, duration: 0.5 });
+      }
+
+      if (props.number == 3) {
+        gsap.to(driverOneFunctions, { opacity: 1, duration: 0.5 });
+        gsap.to(buttonTitle3, { opacity: 1, duration: 0.5 });
       }
 
       setClicked(false);
@@ -75,6 +91,10 @@ const PlusButton = (props) => {
     headerExperience = document.getElementById("header-experience");
 
     driverInsights = document.getElementById("driver-insights");
+    buttonTitle2 = document.getElementById("button-title2");
+    
+    driverOneFunctions = document.getElementById("driverone-functions");
+    buttonTitle3 = document.getElementById("button-title3");
   }
 
   useEffect(() => {

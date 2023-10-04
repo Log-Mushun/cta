@@ -14,6 +14,7 @@ import SlidableController from "@/components/Experiences/airports/SlidableContro
 import Plexus from "@/components/Plexus";
 import { MyContextProvider } from "@/MyContextProvider";
 import AirportsFooter from "@/components/AirportsFooter";
+import GalleryAirports from "@/components/Galleries/GalleryAirports";
 
 import React, { useState, useEffect, useCallback } from "react";
 import GuardianConcept from "@/components/Experiences/airports/GuardianConcept";
@@ -92,9 +93,11 @@ export default function Airports() {
           <SlidableController>
             <DriverOne />
             <PlusButton number={1}
-              right="right-[60%]"
+              right="left-[17%]"
               top="top-[15%]" />
-            <SlidableDriverInfo number={1} title='Driver #1' />
+            <SlidableDriverInfo number={1} 
+            title='Driver #1' 
+            text='Iniciamos el viaje con un check-in fluido y amigable. Nuestras soluciones de manejo de equipaje aseguran que el proceso sea rápido y sin complicaciones (seamless), permitiendo a los pasajeros comenzar su experiencia con una sonrisa. Detrás de cada sistema de check-in eficiente, hay una ingeniería humana meticulosa. Nuestro equipo de expertos colabora con los aeropuertos para diseñar soluciones personalizadas que se adapten a sus necesidades únicas, considerando cada detalle, desde la disposición de las cintas transportadoras hasta la interacción con el personal de la aerolínea. La tecnología puede ser avanzada, pero es la mano humana la que perfecciona el proceso.'/>
           </SlidableController>
         </section>
         {/*SlidableDriverInfo affects the layout of the next element, so we have to let an empty div here in order to avoid the bug */}
@@ -104,11 +107,14 @@ export default function Airports() {
           <SlidableController>
             <DriverInsights />
             <PlusButton number={2}
-              right="right-[35%]"
+              right="right-[51%]"
               top="bottom-[20%]"
             />
-            <h1 className="absolute right-[15%] bottom-[25%] z-[11] text-4xl">Another title</h1>
-            <SlidableDriverInfo number={2} title='Insights Title'
+            <h1 className="absolute right-[15%] bottom-[25%] z-[11] text-4xl button-title2 opacity-0" id="button-title2">Seguridad del aeropuerto</h1>
+            <SlidableDriverInfo number={2} 
+            title='Ángel Guardián en Seguridad'
+            text='En el corazón de la seguridad del aeropuerto, MATEC garantiza un paso seguro y protegido a través de los procesos de Security Feed y Security Shunt. Nuestra tecnología de vanguardia se combina con la vigilancia humana para ofrecer una seguridad sólida. La ingeniería humana se destaca en la interpretación de los datos recopilados por nuestros sistemas. Nuestros expertos analizan continuamente los patrones de equipaje y supervisan cualquier anomalía, actuando de inmediato para garantizar la seguridad de todos los pasajeros.'
+
             />
           </SlidableController>
         </section>
@@ -118,11 +124,16 @@ export default function Airports() {
             <PlusButton number={3}
               right="left-[9%]"
               top="top-[20%]" />
-            <h1 className="absolute left-[18%] top-[25%] z-[11] text-4xl">Functions title</h1>
-            <SlidableDriverInfo number={3} title='Functions Title' />
+            <h1 className="absolute left-[18%] top-[25%] z-[11] text-4xl opacity-0 button-title3" id="button-title3">Reclamo de Equipaje de Entrada: El Toque Final
+</h1>
+            <SlidableDriverInfo number={3} title='Viaje sin preocupaciones'
+            text={`MATEC garantiza la integración con los sistemas de inspección (HBS - Hold Baggage Screening | CBIS - Checked Baggage Inspecytion System) en cumplimiento con la TSA y ECAC, para hacer la inspección del equipaje en los niveles 1, 2 y 3, logrando precisión de clasificación del más alto nivel, con capacidades hasta de 3600 UPH por línea.
+            \n
+            Para la clasificación de equipaje sospechoso / limpio, MATEC cuenta con soluciones de alta tecnologíay robustez, que garantizan la confiabilidad requerida, gracias a que han sido probados en los ambientes más criticos a los que se puedan presentar en los aeropuertos.`}/>
           </SlidableController>
         </section>
-        <GuardianConcept />
+        {/* <GuardianConcept /> */}
+        <GalleryAirports/>
       </div>
     </MyContextProvider>
   )
