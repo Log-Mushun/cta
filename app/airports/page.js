@@ -13,6 +13,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import SlidableController from "@/components/Experiences/airports/SlidableController";
 import Plexus from "@/components/Plexus";
 import { MyContextProvider } from "@/MyContextProvider";
+import AirportsFooter from "@/components/AirportsFooter";
 
 import React, { useState, useEffect, useCallback } from "react";
 import GuardianConcept from "@/components/Experiences/airports/GuardianConcept";
@@ -78,6 +79,7 @@ export default function Airports() {
 }, []);
 return (
   <MyContextProvider>
+    <div className="h-full">
     <ProgressBar/>
     <LoadingScreen isVisible={!isWebGiViewerLoaded} />
     <WebGiViewer />
@@ -113,6 +115,7 @@ return (
       </SlidableController>
     </section>
     <GuardianConcept />
+    </div>
   </MyContextProvider>
 )
 }

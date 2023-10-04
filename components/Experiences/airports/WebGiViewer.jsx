@@ -64,7 +64,7 @@ function WebGiViewer() {
             viewer.renderer.refreshPipeline();
     
             //import model
-            await manager.addFromPath("banda.glb");
+            await manager.addFromPath("BandaV2.glb");
             //removes background
             viewer.getPlugin(TonemapPlugin).config.clipBackground = true;
             //disable controns so users can't zoom in/our or rotate our model with the mouse

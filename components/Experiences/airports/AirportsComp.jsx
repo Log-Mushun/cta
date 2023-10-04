@@ -24,7 +24,7 @@ const AirportsComp = () => {
             <div className="text-center pt-[4rem] z-[11]">
                 <h1 className="text-7xl experience_title">{t('header-airport')}</h1>
             </div>
-            <div className="flex flex-row self-center scrolldown z-[11]">
+            <div className="flex flex-row self-center scrolldown z-[11] pb-10">
                     <motion.div
                         animate={{
                             opacity: [0, 1, 0],
