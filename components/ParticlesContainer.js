@@ -13,6 +13,7 @@ const ParticlesContainer = ({ key }) => {
   return (
     <Particles
       key={key}
+      id={`tspaticles${key}`}
       className='w-[100vh] h-full absolute left-0 bottom-0  flex items-start'
       init={particlesInit}
       loaded={particlesLoaded}

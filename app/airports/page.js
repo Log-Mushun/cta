@@ -16,13 +16,13 @@ import { MyContextProvider } from "@/MyContextProvider";
 import AirportsFooter from "@/components/AirportsFooter";
 import GalleryAirports from "@/components/Galleries/GalleryAirports";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import GuardianConcept from "@/components/Experiences/airports/GuardianConcept";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import ProgressBar from "@/components/ProgressBar/ProgressBar";
-import ParticlesContainer from "@/components/ParticlesContainer";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -111,10 +111,8 @@ export default function Airports() {
               top="bottom-[20%]"
             />
             <h1 className="absolute right-[15%] bottom-[25%] z-[11] text-4xl button-title2 opacity-0" id="button-title2">Seguridad del aeropuerto</h1>
-            <SlidableDriverInfo number={2} 
-            title='Ángel Guardián en Seguridad'
+            <SlidableDriverInfo number={2} title='Ángel Guardián en Seguridad'
             text='En el corazón de la seguridad del aeropuerto, MATEC garantiza un paso seguro y protegido a través de los procesos de Security Feed y Security Shunt. Nuestra tecnología de vanguardia se combina con la vigilancia humana para ofrecer una seguridad sólida. La ingeniería humana se destaca en la interpretación de los datos recopilados por nuestros sistemas. Nuestros expertos analizan continuamente los patrones de equipaje y supervisan cualquier anomalía, actuando de inmediato para garantizar la seguridad de todos los pasajeros.'
-
             />
           </SlidableController>
         </section>
@@ -124,12 +122,11 @@ export default function Airports() {
             <PlusButton number={3}
               right="left-[9%]"
               top="top-[20%]" />
-            <h1 className="absolute left-[18%] top-[25%] z-[11] text-4xl opacity-0 button-title3" id="button-title3">Reclamo de Equipaje de Entrada: El Toque Final
-</h1>
-            <SlidableDriverInfo number={3} title='Viaje sin preocupaciones'
-            text={`MATEC garantiza la integración con los sistemas de inspección (HBS - Hold Baggage Screening | CBIS - Checked Baggage Inspecytion System) en cumplimiento con la TSA y ECAC, para hacer la inspección del equipaje en los niveles 1, 2 y 3, logrando precisión de clasificación del más alto nivel, con capacidades hasta de 3600 UPH por línea.
-            \n
-            Para la clasificación de equipaje sospechoso / limpio, MATEC cuenta con soluciones de alta tecnologíay robustez, que garantizan la confiabilidad requerida, gracias a que han sido probados en los ambientes más criticos a los que se puedan presentar en los aeropuertos.`}/>
+            <h1 className="absolute left-[18%] top-[25%] z-[11] text-4xl opacity-0 button-title3" id="button-title3">Reclamo de Equipaje de Entrada: El Toque Final</h1>
+            <SlidableDriverInfo number={3} title='Viaje sin Preocupaciones'
+            text='MATEC garantiza la integración con los sistemas de inspección (HBS - Hold Baggage Screening | CBIS - Checked Baggage Inspecytion System) en cumplimiento con la TSA y ECAC, para hacer la inspección del equipaje en los niveles 1, 2 y 3, logrando precisión de clasificación del más alto nivel, con capacidades hasta de 3600 UPH por línea.
+
+            Para la clasificación de equipaje sospechoso / limpio, MATEC cuenta con soluciones de alta tecnologíay robustez, que garantizan la confiabilidad requerida, gracias a que han sido probados en los ambientes más criticos a los que se puedan presentar en los aeropuertos.'/>
           </SlidableController>
         </section>
         {/* <GuardianConcept /> */}

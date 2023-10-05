@@ -43,7 +43,7 @@ const PlusButton = (props) => {
 
       
       if (props.number == 3) {
-        gsap.to(driverOneFunctions, { opacity: 0, duration: 0.5 });
+        // gsap.to(driverOneFunctions, { opacity: 0, duration: 0.5 });
         gsap.to(buttonTitle3, { opacity: 0, duration: 0.5 });
       }
 
