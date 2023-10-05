@@ -128,7 +128,7 @@ export default function Airports() {
             <PlusButton number={3}
               right="left-[9%]"
               top="top-[20%]" />
-            <h1 className="absolute left-[18%] top-[25%] z-[11] text-4xl opacity-0 button-title3" id="button-title3">Reclamo de Equipaje de Entrada: El Toque Final</h1>
+            <h1 className="absolute left-[18%] top-[25%] z-[11] text-4xl opacity-0 button-title3" id="button-title3">{t("airport-driver2-title")}</h1>
             <SlidableDriverInfo number={3}   title={t('airport-slidable-title3')}
             text={t('airport-slidable-texto3')}/>
           </SlidableController>

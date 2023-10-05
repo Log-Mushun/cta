@@ -43,14 +43,14 @@ onClick={()=>{
         setOpen(true)
     }
 }} >
-                   {i18n.language=='EN'?
+                   {i18n.language=='PT'?
                     (<>
-                    <US title="English" style={{width:'2rem', marginRight:'0.5rem'}} onClick={()=>{
+                    <PT title="Portuguese" style={{width:'2rem', marginRight:'0.5rem'}} onClick={()=>{
     if(!open){
         setOpen(true)
     }
 }} />
-                    EN
+                    PT
                     </> )
                     :i18n.language=='SP'?
                     (<>
@@ -90,13 +90,13 @@ onClick={()=>{
                             </>)
                           :
                           (<>
-                            <PT title="Portuguese" style={{width:'2rem', marginRight:'0.5rem'}} onClick={()=>{
-    if(!open){
-        setOpen(true)
-    }
-}} />
-                            PT
-                            </>)
+                            <US title="English" style={{width:'2rem', marginRight:'0.5rem'}} onClick={()=>{
+            if(!open){
+                setOpen(true)
+            }
+        }} />
+                            EN
+                            </> )
                     }
                     
                     </button>
