@@ -2,7 +2,7 @@ import { Particles } from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
 import React, { useCallback } from 'react';
 
-const ParticlesContainer = ({ key }) => {
+const ParticlesContainer = (props) => {
   //  init
   const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
@@ -12,8 +12,8 @@ const ParticlesContainer = ({ key }) => {
 
   return (
     <Particles
-      key={key}
-      id={`tspaticles${key}`}
+      key={props.number}
+      id={`tspaticles${props.number}`}
       className='w-[100vh] h-full absolute left-0 bottom-0  flex items-start'
       init={particlesInit}
       loaded={particlesLoaded}

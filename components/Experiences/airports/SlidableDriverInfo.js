@@ -78,7 +78,7 @@ const SlidableDriverInfo = (props) => {
       </div>
       <div className='flex flex-row'>
         <div className='bg-[#021322] w-[20%] h-[100vh] relative'>
-          <ParticlesContainer key={props.number}/>
+          <ParticlesContainer number={props.number}/>
         </div>
         <div className='relative bg-gradient-to-t from-[#021322] to-[#213541]  h-[100vh] w-[80%]'>
           <div className='flex flex-col'>
