@@ -5,43 +5,49 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '@/variants';
 import VideoComponent from '@/components/VideoComponent';
+import { I18nextProvider, useTranslation } from "react-i18next";
+import {i18n as i18nfile} from "../../../i18n";
 
 //  about data
-export const driverData = [
-    {
-        title: 'Tu Ángel Guardián en la Industria Aeroportuaria',
-        info: [
-            {
-                description: 'MATEC, tu socio confiable en sistemas de manejo de equipaje para aeropuertos, abraza su papel como tu "Ángel Guardián" en cada paso del proceso aeroportuario. Desde el momento en que los pasajeros realizan el check-in hasta la recogida de su equipaje en el área de reclamo, estamos comprometidos en brindar soluciones que optimizan la eficiencia, la seguridad y la comodidad, al tiempo que impulsan la rentabilidad y la sostenibilidad. A continuación, exploramos cómo MATEC agrega un toque humano a procesos como Check-In, Inspección de Seguridad, Clasificación de equipaje (Make Up) Reclamo de equipaje y más.'
-            },
-        ],
-    },
-    {
-        title: 'Resolución en Pantalla (OSR) en Tiempo Real',
-        info: [
-            {
-                description: 'En la sala de control del BHS, nuestro personal actúa como verdaderos ángeles guardianes, utilizando el On-Screen Resolution (OSR) para abordar cualquier problema en tiempo real, garantizando un flujo constante y seguro de equipaje. Detrás de esta tecnología, hay un equipo humano altamente capacitado que responde de manera eficaz ante desafíos imprevistos. La ingeniería humana se destaca al tomar decisiones informadas y rápidas que mantienen la operación en movimiento sin problemas.',
-            }
-        ],
-    },
-    {
-        title: 'CBRA: Eficiencia y seguridad.Comodidad para Pasajeros',
-        info: [
-            {
-                description: 'El proceso de CBRA (Claim-Based Reconciliation Area) se vuelve transparente con nuestras soluciones. Agregamos eficiencia y comodidad, permitiendo a los pasajeros reunirse con su equipaje rápidamente. La ingeniería humana se refleja en la eficacia de nuestros sistemas. Nuestro equipo se esfuerza por lograr un proceso sin fisuras, garantizando que cada pasajero tenga una experiencia positiva al llegar a su destino.',
-            },
-        ],
-    }
-];
 
 const DriverInsights = () => {
   const [index, setIndex] = useState(0);
+  const { t, i18n } = useTranslation();
 
   const handleIndexChange = (itemIndex) => {
     setIndex(itemIndex);
   };
 
+  const driverData = [
+    {
+        title: t('airport-driver1-tab3-title'),
+        info: [
+            {
+                description:  t('airport-driver1-tab3-text')
+            },
+        ],
+    },
+    {
+      title: t('airport-driver1-tab2-title'),
+      info: [
+          {
+              description:  t('airport-driver1-tab2-text')
+          },
+      ],
+    },
+    {
+      title: t('airport-driver1-tab1-title'),
+      info: [
+          {
+              description:  t('airport-driver1-tab1-text')
+          },
+      ],
+    }
+];
+
   return (
+    <I18nextProvider i18n={i18nfile}>
+
     <div className="h-[100vh] text-right pr-40 relative" id="driver-insights">
       <div className='driver-insightsclass opacity-0 z-[100] absolute w-[35%] pt-40 pl-10'>
         <div className='flex h-[1vh] mb-4'>
@@ -72,6 +78,8 @@ const DriverInsights = () => {
       </div>
       <VideoComponent videoIndex={index} /> {/* Pasar el índice al componente de video */}
     </div>
+    </I18nextProvider>
+
   );
 }
 

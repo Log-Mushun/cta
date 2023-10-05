@@ -4,6 +4,8 @@ import { ES } from 'country-flag-icons/react/3x2'
 import { CN } from 'country-flag-icons/react/3x2'
 import { PT } from 'country-flag-icons/react/3x2'
 import { FR } from 'country-flag-icons/react/3x2'
+import { DE } from 'country-flag-icons/react/3x2'
+
 import { I18nextProvider, useTranslation } from 'react-i18next';
 import {i18n as i18nfile} from "../../i18n";
 
@@ -77,6 +79,15 @@ onClick={()=>{
 }} />
                           FR
                           </>)
+                          :i18n.language=='DE'?
+                          (<>
+                            <DE title="Deutch" style={{width:'2rem', marginRight:'0.5rem'}} onClick={()=>{
+      if(!open){
+          setOpen(true)
+      }
+  }} />
+                            DE
+                            </>)
                           :
                           (<>
                             <PT title="Portuguese" style={{width:'2rem', marginRight:'0.5rem'}} onClick={()=>{
@@ -96,17 +107,18 @@ onClick={()=>{
     justifyContent: 'center',
     display: 'flex',
     height: '100%',
-    alignItems: 'center'
+    alignItems: 'center',
   }}
   onClose={() => setOpen(false)}
   aria-labelledby="modal-modal-title"
   aria-describedby="modal-modal-description"
 >
-  <List sx={{ width: '100%', maxWidth: 360, bgcolor: '#3dbbee' }}>
+  <List sx={{ width: '100%', maxWidth: 360, bgcolor: '#70A6CB' }}>
     {[
       { code: 'EN', flag: 'US', texto:'English' },
       { code: 'SP', flag: 'ES', texto:'Spanish' },
       { code: 'FR', flag: 'FR', texto:'French' },
+      { code: 'DE', flag: 'DE', texto:'Deutsch' },
       { code: 'PT', flag: 'PT', texto:'Portuguese' },
       { code: 'CN', flag: 'CN', texto:'Mandarin' }
      
