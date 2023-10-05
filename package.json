@@ -49,6 +49,7 @@
     "@svgr/webpack": "^8.1.0",
     "@types/webgi": "https://storage.googleapis.com/dist.pixotronics.com/webgi/runtime/bundle-types-0.5.5.tgz",
     "cross-env": "^7.0.3",
+    "next-pwa": "^5.6.0",
     "webgi": "https://storage.googleapis.com/dist.pixotronics.com/webgi/runtime/bundle-0.5.5.tgz"
   }
 }
