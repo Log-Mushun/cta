@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '@/variants';
@@ -17,6 +17,22 @@ const DriverInsights = () => {
   const handleIndexChange = (itemIndex) => {
     setIndex(itemIndex);
   };
+
+
+  useEffect(() => {
+    // Suscribirse al evento personalizado
+    const handleCustomEvent = () => {
+      // Realizar la acción necesaria para forzar el rerender en ComponenteB
+      console.log('ComponenteB ha sido forzado a rerender', i18n.language);
+    };
+
+    window.addEventListener('customEvent', handleCustomEvent);
+
+    return () => {
+      // Desuscribirse al desmontar el componente (limpiar)
+      window.removeEventListener('customEvent', handleCustomEvent);
+    };
+  }, []);
 
   const driverData = [
     {

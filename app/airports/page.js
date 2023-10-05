@@ -25,6 +25,7 @@ import ProgressBar from "@/components/ProgressBar/ProgressBar";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import {i18n as i18nfile} from "../../i18n";
+import { subscribeToCustomEvent } from "@/components/Languages/eventService";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -81,6 +82,22 @@ export default function Airports() {
       document.removeEventListener('webGiViewerLoaded', handleWebGiViewerLoaded);
     };
   }, []);
+
+  useEffect(() => {
+    // Suscribirse al evento personalizado
+    const handleCustomEvent = () => {
+      // Realizar la acción necesaria para forzar el rerender en ComponenteB
+      console.log('ComponenteB ha sido forzado a rerender');
+    };
+
+    window.addEventListener('customEvent', handleCustomEvent);
+
+    return () => {
+      // Desuscribirse al desmontar el componente (limpiar)
+      window.removeEventListener('customEvent', handleCustomEvent);
+    };
+  }, []);
+
   return (
     <I18nextProvider i18n={i18nfile}>
     <MyContextProvider>
