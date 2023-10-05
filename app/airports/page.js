@@ -115,7 +115,7 @@ export default function Airports() {
               right="right-[51%]"
               top="bottom-[20%]"
             />
-            <h1 className="absolute right-[15%] bottom-[25%] z-[11] text-4xl button-title2 opacity-0" id="button-title2">Seguridad del aeropuerto</h1>
+            <h1 className="absolute right-[15%] bottom-[25%] z-[11] text-4xl button-title2 opacity-0" id="button-title2">{t('airport-driver1-title2')}</h1>
             <SlidableDriverInfo number={2} 
             title={t('airport-slidable-title1')}
             text={t('airport-slidable-texto1')}
