@@ -1,3 +1,14 @@
+const runtimeCaching = require('next-pwa/cache')
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  runtimeCaching,
+  disable: process.env.NODE_ENV === 'development',
+  buildExcludes: [/middleware-manifest.json$/],
+  maximumFileSizeToCacheInBytes: 4000000,
+})
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     webpack: function (config) {
@@ -32,4 +43,9 @@ const nextConfig = {
     }
 }
 
-module.exports = nextConfig
+module.exports = () => {
+  const plugins = [withPWA]
+  return plugins.reduce((acc, plugin) => plugin(acc), {
+    ...nextConfig,
+  })
+}

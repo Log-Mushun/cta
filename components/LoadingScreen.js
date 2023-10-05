@@ -32,7 +32,7 @@ const LoadingScreen = ({ isVisible }) => {
 
 
   return (
-    <div ref={loadingScreenRef} className='h-screen fixed w-screen bg-gradient-radial-c flex flex-col justify-around items-center z-[300]'>
+    <div ref={loadingScreenRef} className='h-screen fixed w-screen bg-gradient-radial-c flex flex-col justify-around items-center z-[300]' style={{zIndex:10001}}>
       <div className='container mx-auto flex justify-center z-10'>
         {/* logo */}
         <Image
