@@ -24,12 +24,12 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import ProgressBar from "@/components/ProgressBar/ProgressBar";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import { I18nextProvider, useTranslation } from "react-i18next";
-import {i18n as i18nfile} from "../../i18n";
+import {i18n as i18nfile} from "@/i18n";
 import { subscribeToCustomEvent } from "@/components/Languages/eventService";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-export default function Airports() {
+export default function Airports({params:{lng}}) {
   const [isWebGiViewerLoaded, setIsWebGiViewerLoaded] = useState(false);
 
   const { t, i18n } = useTranslation();

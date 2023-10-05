@@ -152,7 +152,7 @@ const resources = {
       "footer-cookies": "Cookies"
     }
   },
-  sp: {
+  es: {
     translation: {
       "selector-title": "Selecciona tu experiencia",
       "selector-aeropuerto": "Aeropuertos",
@@ -198,7 +198,6 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default

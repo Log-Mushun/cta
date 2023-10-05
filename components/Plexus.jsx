@@ -11,7 +11,7 @@ const Plexus = (props) => {
     return (
       <div className="hidden lg:block fixed inset-0 w-full h-full z-10 bg-gradient-radial-a">
         <video autoPlay={true} loop muted className="h-screen opacity-70 z-[100] fixed">
-          <source src="videos/plexusv3.webm" type="video/webm" />
+          <source src="../videos/plexusv3.webm" type="video/webm" />
         </video>
       </div>
     );
